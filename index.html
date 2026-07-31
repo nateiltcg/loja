@@ -103,9 +103,6 @@
     letter-spacing: 0.01em;
     text-transform: uppercase;
   }
-  h1 .line{
-    display:block;
-  }
   h1 span{
     display:inline-block;
     background: linear-gradient(180deg, #F4E3A1 0%, var(--gold) 38%, var(--red) 78%, #7E2827 100%);
@@ -118,9 +115,6 @@
       0 10px 24px rgba(0,0,0,0.45);
     transform: rotate(var(--tilt, 0deg));
   }
-  h1 .line:first-child span{ --tilt: -1.2deg; }
-  h1 .line:last-child span{ --tilt: 1deg; }
-
   @media (prefers-reduced-motion: no-preference){
     .badge, h1 .line, .pips, .sub, .socials, footer{
       animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both;
@@ -235,15 +229,7 @@
 
   <main class="wrap">
 
-   /* --- div class="badge" aria-hidden="true">
-      svg viewBox="0 0 76 76" fill="none">
-        path d="M38 3 L70 20 V56 L38 73 L6 56 V20 Z" fill="var(--navy-800)" stroke="var(--gold)" stroke-width="1.5"/>
-        path d="M38 15 L58 26 V50 L38 61 L18 50 V26 Z" fill="none" stroke="var(--blue)" stroke-width="2"/>
-        path d="M38 27 L46 32 V42 L38 47 L30 42 V32 Z" fill="var(--red)"/>
-      /svg>
-    /div --- */
-
-    <p class="eyebrow">Loja de cartas Pokémon &nbsp;·&nbsp; <strong>Nateil</strong></p>
+    <p class="eyebrow">  <strong>Nateil</strong> &nbsp;·&nbsp; TCG</p>
 
     <h1>
       <span class="line"><span>Em</span></span>
@@ -261,7 +247,7 @@
     </p>
 
     <nav class="socials" aria-label="Redes sociais">
-      <a class="social youtube" href="#" aria-label="YouTube">
+      <a class="social youtube" href="https://www.youtube.com/@nateil" aria-label="YouTube">
         <span class="social-label">YouTube</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="2.5" y="6" width="19" height="12" rx="4"/>
@@ -269,7 +255,7 @@
         </svg>
       </a>
 
-      <a class="social instagram" href="#" aria-label="Instagram">
+      <a class="social instagram" href="https://www.instagram.com/nateil.tcg/" aria-label="Instagram">
         <span class="social-label">Instagram</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="3" width="18" height="18" rx="5"/>
@@ -278,7 +264,7 @@
         </svg>
       </a>
 
-      <a class="social tiktok" href="#" aria-label="TikTok">
+      <a class="social tiktok" href="https://www.tiktok.com/@nateil.tcg" aria-label="TikTok">
         <span class="social-label">TikTok</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
           <path d="M14 3v10.4a3.3 3.3 0 1 1-2.6-3.23"/>
