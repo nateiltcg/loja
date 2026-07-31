@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nateil TCG Loja — Em breve</title>
+<meta name="description" content="Loja de cartas Pokémon. Em breve por aqui. Pokemon. TCG.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --blue:   #209CCF;
+    --red:    #A63635;
+    --gold:   #D7B55C;
+    --green:  #86A55F;
+
+    --ink:      #0F1B20;
+    --navy-900: #14232A;
+    --navy-800: #1B2F38;
+    --navy-700: #223B46;
+    --cream:    #F4EAD2;
+    --cream-dim: #C9C0A8;
+
+    --font-display: 'Baloo 2', system-ui, sans-serif;
+    --font-body: 'Nunito Sans', system-ui, sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+  }
+
+  body{
+    background-color: var(--navy-900);
+    background-image:
+      radial-gradient(ellipse 60% 45% at 50% 8%, rgba(32,156,207,0.16), transparent 70%),
+      radial-gradient(ellipse 55% 40% at 85% 95%, rgba(166,54,53,0.14), transparent 70%);
+    color: var(--cream);
+    font-family: var(--font-body);
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* hex-shell texture, evoking Shuckle's segmented shell */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    opacity:0.5;
+    pointer-events:none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='96' viewBox='0 0 84 96'%3E%3Cpath d='M42 0 L84 24 L84 72 L42 96 L0 72 L0 24 Z' fill='none' stroke='%23D7B55C' stroke-opacity='0.07' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-size: 84px 96px;
+  }
+
+  .wrap{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width: 620px;
+    padding: 48px 28px 40px;
+    text-align:center;
+  }
+
+  /* --- badge / logo mark --- */
+  .badge{
+    width:76px;
+    height:76px;
+    margin: 0 auto 22px;
+    position:relative;
+  }
+  .badge svg{ width:100%; height:100%; display:block; }
+
+  .eyebrow{
+    font-family: var(--font-body);
+    font-weight:700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--cream-dim);
+    margin: 0 0 30px;
+  }
+  .eyebrow strong{
+    color: var(--gold);
+  }
+
+  /* --- WordArt-style headline --- */
+  h1{
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(3rem, 13vw, 5.6rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+  }
+  h1 .line{
+    display:block;
+  }
+  h1 span{
+    display:inline-block;
+    background: linear-gradient(180deg, #F4E3A1 0%, var(--gold) 38%, var(--red) 78%, #7E2827 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(20,35,42,0.55);
+    text-shadow:
+      0 2px 0 rgba(20,35,42,0.35),
+      0 10px 24px rgba(0,0,0,0.45);
+    transform: rotate(var(--tilt, 0deg));
+  }
+  h1 .line:first-child span{ --tilt: -1.2deg; }
+  h1 .line:last-child span{ --tilt: 1deg; }
+
+  @media (prefers-reduced-motion: no-preference){
+    .badge, h1 .line, .pips, .sub, .socials, footer{
+      animation: rise 0.7s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .badge{ animation-delay: 0s; }
+    h1 .line:first-child{ animation-delay: .08s; }
+    h1 .line:last-child{ animation-delay: .16s; }
+    .pips{ animation-delay: .26s; }
+    .sub{ animation-delay: .32s; }
+    .socials{ animation-delay: .42s; }
+    footer{ animation-delay: .5s; }
+  }
+  @keyframes rise{
+    from{ opacity:0; transform: translateY(14px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  /* --- four energy pips, one per palette color --- */
+  .pips{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin: 22px 0 20px;
+  }
+  .pips span{
+    width:11px;
+    height:11px;
+    display:block;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .pips span:nth-child(1){ background: var(--blue); }
+  .pips span:nth-child(2){ background: var(--gold); }
+  .pips span:nth-child(3){ background: var(--red); }
+  .pips span:nth-child(4){ background: var(--green); }
+
+  .sub{
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--cream-dim);
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  .sub strong{ color: var(--cream); font-weight:700; }
+
+  /* --- social row --- */
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin: 38px 0 6px;
+    flex-wrap: wrap;
+  }
+
+  .social{
+    --accent: var(--blue);
+    width:54px;
+    height:54px;
+    border-radius: 16px;
+    background: var(--navy-800);
+    border: 1px solid var(--navy-700);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color: var(--cream);
+    text-decoration:none;
+    transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .social svg{ width:24px; height:24px; }
+  .social:hover,
+  .social:focus-visible{
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--navy-900);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px -8px var(--accent);
+  }
+  .social:focus-visible{
+    outline: 2px solid var(--cream);
+    outline-offset: 3px;
+  }
+
+  .social.youtube{ --accent: var(--red); }
+  .social.instagram{ --accent: var(--gold); }
+  .social.tiktok{ --accent: var(--blue); }
+  .social.mypcards{ --accent: var(--green); }
+
+  .social-label{
+    position:absolute;
+    width:1px; height:1px;
+    overflow:hidden;
+    clip: rect(0 0 0 0);
+    white-space:nowrap;
+  }
+
+  footer{
+    margin-top: 44px;
+    font-size: 0.8rem;
+    color: rgba(201,192,168,0.55);
+    letter-spacing: 0.03em;
+  }
+  footer .dex{
+    color: var(--cream-dim);
+  }
+
+  @media (max-width: 420px){
+    .wrap{ padding: 36px 20px 28px; }
+    .social{ width:50px; height:50px; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="wrap">
+
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 76 76" fill="none">
+        <path d="M38 3 L70 20 V56 L38 73 L6 56 V20 Z" fill="var(--navy-800)" stroke="var(--gold)" stroke-width="1.5"/>
+        <path d="M38 15 L58 26 V50 L38 61 L18 50 V26 Z" fill="none" stroke="var(--blue)" stroke-width="2"/>
+        <path d="M38 27 L46 32 V42 L38 47 L30 42 V32 Z" fill="var(--red)"/>
+      </svg>
+    </div>
+
+    <p class="eyebrow">Loja de cartas Pokémon &nbsp;·&nbsp; <strong>Nateil</strong></p>
+
+    <h1>
+      <span class="line"><span>Em</span></span>
+      <span class="line"><span>breve</span></span>
+    </h1>
+
+    <div class="pips" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+
+    <p class="sub">
+      Uma nova loja está se preparando pra abrir, com o cuidado de quem
+      demora, mas não erra — <strong>igual ao Shuckle</strong>. Siga as redes
+      pra ser avisado assim que a coleção estiver disponível.
+    </p>
+
+    <nav class="socials" aria-label="Redes sociais">
+      <a class="social youtube" href="#" aria-label="YouTube">
+        <span class="social-label">YouTube</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2.5" y="6" width="19" height="12" rx="4"/>
+          <path d="M10.5 9.5 L15.5 12 L10.5 14.5 Z" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+      <a class="social instagram" href="#" aria-label="Instagram">
+        <span class="social-label">Instagram</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4.2"/>
+          <circle cx="17.1" cy="6.9" r="1.1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+
+      <a class="social tiktok" href="#" aria-label="TikTok">
+        <span class="social-label">TikTok</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 3v10.4a3.3 3.3 0 1 1-2.6-3.23"/>
+          <path d="M14 3c.5 2.6 2.2 4.2 4.6 4.5"/>
+        </svg>
+      </a>
+
+      <a class="social mypcards" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="Perfil na MyPCards">
+        <span class="social-label">MyPCards</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="5.5" width="13" height="17" rx="2" transform="rotate(-8 9.5 14)"/>
+          <path d="M17 6 L21.5 12 L17.5 18.5" transform="translate(0,-1)"/>
+          <path d="M9.5 12.5 L10.4 14.5 L12.5 14.8 L11 16.2 L11.4 18.3 L9.5 17.3 L7.6 18.3 L8 16.2 L6.5 14.8 L8.6 14.5 Z" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+    </nav>
+
+    <footer>
+      inspirado por Shuckle <span class="dex">Nº 213</span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
