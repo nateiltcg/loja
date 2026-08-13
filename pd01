@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nateil TCG — Cartas Pokémon</title>
+<meta name="description" content="Loja de cartas Pokémon. Produtos selados, boosters e muito mais.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="pg-header">
+    <div class="pg-logo-row">
+      <a href="index.html">
+        <!-- mesmo logo da produtos.html — assets/nateil-logo-tgc.svg -->
+        <img src="assets/nateil-logo-tgc.svg" alt="Nateil TCG">
+      </a>
+    </div>
+
+    <nav class="pg-nav" aria-label="Navegação principal">
+      <a href="index.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <a href="produtos.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Produtos
+      </a>
+      <a href="#contato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Contato
+      </a>
+    </nav>
+  </header>
+
+  <main class="wrap pg-main">
+
+    <!-- PRODUTO EM DESTAQUE / PRÉ-VENDA -->
+    <section class="pg-featured">
+      <div class="pg-featured-img">
+        <img src="assets/produto-caixa-celebracao-30-anos.png" alt="Caixa de treinador Avançado, Celebração 30 anos">
+      </div>
+      <div class="pg-featured-info">
+        <div class="pg-featured-title">
+          <h2>Caixa de treinador Avançado</h2>
+          <p>Celebração 30 anos</p>
+        </div>
+        <div class="pg-price-block">
+          <p class="full">R$ 450,00</p>
+          <p class="pix">R$400,00 no Pix</p>
+          <p class="installments">3x de R$150,00 sem juros</p>
+        </div>
+        <a class="pg-cta" href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer">Cadastrar pré venda</a>
+      </div>
+    </section>
+
+    <!-- MAIS PRODUTOS -->
+    <section>
+      <div class="pg-section-label"><p>Mais produtos</p></div>
+
+      <div class="pg-grid">
+
+        <article class="pg-card">
+          <div class="pg-card-img"><img src="assets/produto-caixa-caos-ascendente.png" alt="Caixa de treinador Avançado, ME04 Caos Ascendente"></div>
+          <div class="pg-card-body">
+            <div class="pg-card-text">
+              <h3>Caixa de treinador Avançado</h3>
+              <p>ME04 Caos Ascendente</p>
+            </div>
+            <a class="pg-buy" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer">
+              <span>Comprar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pg-card">
+          <div class="pg-card-img"><img src="assets/produto-caixa-escuridao-absoluta.png" alt="Caixa de treinador Avançado, ME05 Escuridão Absoluta"></div>
+          <div class="pg-card-body">
+            <div class="pg-card-text">
+              <h3>Caixa de treinador Avançado</h3>
+              <p>ME05 Escuridão Absoluta</p>
+            </div>
+            <a class="pg-buy" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer">
+              <span>Comprar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pg-card">
+          <div class="pg-card-img"><img src="assets/produto-combo-pacotes.png" alt="Combo de pacotes, ME05 Escuridão Absoluta"></div>
+          <div class="pg-card-body">
+            <div class="pg-card-text">
+              <h3>Combo de pacotes</h3>
+              <p>ME05 Escuridão Absoluta</p>
+            </div>
+            <a class="pg-buy" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer">
+              <span>Comprar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pg-card">
+          <div class="pg-card-img"><img src="assets/produto-blister-triplo-escuridao.png" alt="Blister triplo, ME05 Escuridão Absoluta"></div>
+          <div class="pg-card-body">
+            <div class="pg-card-text">
+              <h3>Blister triplo</h3>
+              <p>ME05 Escuridão Absoluta</p>
+            </div>
+            <a class="pg-buy" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer">
+              <span>Comprar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="pg-card">
+          <div class="pg-card-img"><img src="assets/produto-blister-quadruplo-escuridao.png" alt="Blister quadruplo, ME05 Escuridão Absoluta"></div>
+          <div class="pg-card-body">
+            <div class="pg-card-text">
+              <h3>Blister quadruplo</h3>
+              <p>ME05 Escuridão Absoluta</p>
+            </div>
+            <a class="pg-buy" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer">
+              <span>Comprar</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pg-footer" id="contato">
+    <div class="wrap pg-footer-inner">
+
+      <div class="pg-footer-brand">
+        <p>Nateil TCG</p>
+        <ul class="pg-footer-links">
+          <li><a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+          <li><a href="#como-comprar">Como comprar</a></li>
+        </ul>
+      </div>
+
+      <div class="pg-footer-right">
+        <div class="pg-socials">
+          <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="whats.svg" alt=""></a>
+          <a href="#" aria-label="TikTok"><img src="tiktok.svg" alt=""></a>
+          <a href="#" aria-label="YouTube"><img src="youtube.svg" alt=""></a>
+          <a href="#" aria-label="Instagram"><img src="insta.svg" alt=""></a>
+          <a href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="MyPCards"><img src="mypcards.svg" alt=""></a>
+        </div>
+        <div class="pg-copyright">
+          <span>© 2026 Nateil TCG. Todos os direitos reservados</span>
+          <span>Pokémon Company International ©</span>
+          <span>Copag ©</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
