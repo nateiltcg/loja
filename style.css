@@ -216,3 +216,79 @@ button{ font-family:inherit; }
   font-size: .72rem;
   color: var(--text);
 }
+/* ---------- featured product (home) ---------- */
+.pg-featured{
+  display:flex;
+  gap: 16px;
+  align-items:center;
+  width:100%;
+  flex-wrap: wrap;
+}
+.pg-featured-img{
+  flex: 0 1 320px;
+  max-width: 320px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  background: rgba(226,226,226,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.pg-featured-img img{
+  width:80%;
+  height:80%;
+  object-fit: contain;
+}
+.pg-featured-info{
+  flex: 1 1 320px;
+  display:flex;
+  flex-direction:column;
+  gap: 20px;
+}
+.pg-featured-title h2{
+  margin:0;
+  font-weight:500;
+  font-size: 2rem;
+  color: var(--text-dim);
+}
+.pg-featured-title p{
+  margin:4px 0 0;
+  font-weight:400;
+  font-size: 1.5rem;
+  color: var(--text-dim2);
+}
+.pg-price-block{ display:flex; flex-direction:column; gap:4px; }
+.pg-price-block .full{ margin:0; font-weight:500; font-size:1.25rem; color:#fff; }
+.pg-price-block .pix{ margin:0; font-weight:700; font-size:1.1rem; color:#D3B361; }
+.pg-price-block .installments{ margin:0; font-weight:400; font-size:1.1rem; color: var(--gold); }
+ 
+.pg-cta{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  padding: 16px;
+  border-radius: 20px;
+  background: #FFDF96;
+  color: #002036;
+  font-weight:500;
+  font-size: 1.125rem;
+  text-transform:uppercase;
+  text-align:center;
+}
+.pg-cta:hover{ opacity:.9; }
+ 
+.pg-section-label{
+  display:flex;
+  justify-content:center;
+  padding: 0 36px;
+  margin: 8px 0 4px;
+}
+.pg-section-label p{
+  margin:0;
+  font-weight:700;
+  font-size: 1.125rem;
+  text-transform:uppercase;
+  color: var(--text);
+}
