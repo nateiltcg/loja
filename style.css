@@ -216,6 +216,9 @@ button{ font-family:inherit; }
   font-size: .72rem;
   color: var(--text);
 }
+.modal-overlay{
+    display:flex;
+}
 /* ---------- featured product (home) ---------- */
 .pg-featured{
   display:flex;
