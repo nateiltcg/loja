@@ -158,8 +158,10 @@ button{ font-family:inherit; }
   align-items:center;
   gap:10px;
   padding: 6px 0;
-  border-bottom: 1px solid var(--line);
   width:fit-content;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 .pg-buy span{
   font-weight:500;
