@@ -225,7 +225,6 @@ button{ font-family:inherit; }
   flex-wrap: wrap;
 }
 .pg-featured-img{
-  flex: 0 1 320px;
   max-width: 320px;
   aspect-ratio: 1/1;
   border-radius: 20px;
