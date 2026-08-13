@@ -268,6 +268,31 @@
 
       resetTimer();
     })();
+    const modal = document.querySelector(".modal-overlay");
+
+const botoes = document.querySelectorAll(".pg-buy");
+
+const fechar = document.querySelector(".modal-close");
+
+
+botoes.forEach(function(botao){
+
+    botao.addEventListener("click", function(event){
+
+        event.preventDefault();
+
+        modal.style.display = "flex";
+
+    });
+
+});
+
+
+fechar.addEventListener("click", function(){
+
+    modal.style.display = "none";
+
+});
   </script>
 </body>
 </html>
