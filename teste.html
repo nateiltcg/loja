@@ -70,8 +70,9 @@
             <h3>Caixa de treinador Avançado</h3>
             <p>ME04 Caos Ascendente</p>
           </div>
-          <a class="pg-buy">
-            <span>Comprar <img src="assets/seta.svg"></span>
+          <a class="pg-buy" href="pd02.html" rel="noopener noreferrer">
+            <span>Comprar</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg>
           </a>
         </div>
       </article>
@@ -191,25 +192,38 @@
 
     </div>
   </footer>
-  <!-- MODAL -->
-<div class="modal-overlay" id="productModal">
-  <div class="modal">
-    <button class="modal-close" id="modalCloseBtn">Fechar ×</button>
-    <div class="modal-left">
-      <img id="modalImg" src="" alt="">
+<div class="modal-overlay">
+
+    <div class="modal">
+
+        <button class="modal-close">&times;</button>
+
+        <div class="modal-left">
+            <img src="assets/produto-caixa-celebracao-30-anos.png" alt="">
+        </div>
+
+        <div class="modal-right">
+
+            <h2>Caixa de treinador Avançado</h2>
+
+            <p class="modal-subtitle">
+                Celebração 30 anos
+            </p>
+
+            <div class="modal-price">
+                <p class="preco">R$450,00</p>
+                <p class="pix">R$400,00 no Pix</p>
+                <p class="parcelado">3x de R$150,00 sem juros</p>
+            </div>
+
+            <button class="modal-buy">
+                Comprar
+            </button>
+
+        </div>
+
     </div>
-    <div class="modal-right">
-      <h2 id="modalTitle"></h2>
-      <p class="modal-subtitle" id="modalSubtitle"></p>
-      <div class="modal-price">
-        <p class="preco" id="modalPreco"></p>
-        <p class="pix" id="modalPix"></p>
-        <p class="parcelado" id="modalParcelado"></p>
-      </div>
-      <a class="modal-buy" id="modalLiga" href="#">Comprar na Liga BRA</a>
-      <a class="modal-buy-outline" id="modalWhats" href="#">Comprar pelo WhatsApp</a>
-    </div>
-  </div>
+
 </div>
   <script>
     (function(){
@@ -253,47 +267,31 @@
 
       resetTimer();
     })();
-   (function(){
-  var overlay = document.getElementById('productModal');
-  var imgEl = document.getElementById('modalImg');
-  var titleEl = document.getElementById('modalTitle');
-  var subtitleEl = document.getElementById('modalSubtitle');
-  var precoEl = document.getElementById('modalPreco');
-  var pixEl = document.getElementById('modalPix');
-  var parceladoEl = document.getElementById('modalParcelado');
-  var ligaEl = document.getElementById('modalLiga');
-  var whatsEl = document.getElementById('modalWhats');
-  var closeBtn = document.getElementById('modalCloseBtn');
- 
-  // pega TODOS os botões "Comprar" da grade que tenham data-title
-  document.querySelectorAll('[data-title]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      imgEl.src = btn.dataset.img;
-      imgEl.alt = btn.dataset.title;
-      titleEl.textContent = btn.dataset.title;
-      subtitleEl.textContent = btn.dataset.subtitle;
-      precoEl.textContent = btn.dataset.price;
-      pixEl.textContent = btn.dataset.pix;
-      parceladoEl.textContent = btn.dataset.installments;
-      ligaEl.href = btn.dataset.liga;
-      whatsEl.href = btn.dataset.whats;
- 
-      overlay.classList.add('open');
+    const modal = document.querySelector(".modal-overlay");
+
+const botoes = document.querySelectorAll(".pg-buy");
+
+const fechar = document.querySelector(".modal-close");
+
+
+botoes.forEach(function(botao){
+
+    botao.addEventListener("click", function(event){
+
+        event.preventDefault();
+
+        modal.style.display = "flex";
+
     });
-  });
- 
-  function closeModal(){
-    overlay.classList.remove('open');
-  }
- 
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', function(e){
-    if (e.target === overlay) closeModal();
-  });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeModal();
-  });
-})();
+
+});
+
+
+fechar.addEventListener("click", function(){
+
+    modal.style.display = "none";
+
+});
   </script>
 </body>
 </html>
