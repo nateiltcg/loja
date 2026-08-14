@@ -311,6 +311,25 @@ button{ font-family:inherit; }
 .modal-buy:hover{
   opacity: .9;
 }
+.modal-buy-outline{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid #FFDF96;
+  background: transparent;
+  color: #FFDF96;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.modal-buy-outline:hover{
+  background: rgba(255,223,150,0.08);
+}
 
 /* ---------- footer ---------- */
 .pg-footer{ border-top: 1px solid var(--line); padding: 48px 0 32px; }
