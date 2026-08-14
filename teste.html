@@ -57,9 +57,16 @@
             <h3>Caixa de treinador Avançado</h3>
             <p>Celebração 30 anos</p>
           </div>
-          <button class="pg-buy">
-            <span>Comprar <img src="assets/seta.svg"></span>
-          </button>
+          <button class="pg-buy"
+  data-img="assets/produto-caixa-celebracao-30-anos.png"
+  data-title="Caixa de treinador Avançado"
+  data-subtitle="Celebrações 30 anos"
+  data-price="R$450,00"
+  data-pix="R$400,00 no Pix"
+  data-installments="3x de R$150,00 sem juros"
+  data-whats="#">
+  Comprar <img src="assets/seta.svg">
+</button>
         </div>
       </article>
 
@@ -192,39 +199,31 @@
 
     </div>
   </footer>
-<div class="modal-overlay">
 
-    <div class="modal">
-
-        <button class="modal-close">&times;</button>
-
-        <div class="modal-left">
-            <img src="assets/produto-caixa-celebracao-30-anos.png" alt="">
-        </div>
-
-        <div class="modal-right">
-
-            <h2>Caixa de treinador Avançado</h2>
-
-            <p class="modal-subtitle">
-                Celebração 30 anos
-            </p>
-
-            <div class="modal-price">
-                <p class="preco">R$450,00</p>
-                <p class="pix">R$400,00 no Pix</p>
-                <p class="parcelado">3x de R$150,00 sem juros</p>
-            </div>
-
-            <button class="modal-buy">
-                Comprar
-            </button>
-
-        </div>
-
+  
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <button class="modal-close" id="modalCloseBtn">Fechar ×</button>
+    <div class="modal-left">
+      <img id="modalImg" src="" alt="">
     </div>
-
+    <div class="modal-right">
+      <h2 id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <div class="modal-price">
+        <p class="preco" id="modalPreco"></p>
+        <p class="pix" id="modalPix"></p>
+        <p class="parcelado" id="modalParcelado"></p>
+      </div>
+      <a class="modal-buy" id="modalLiga" href="#">Comprar na Liga BRA</a>
+      <a class="modal-buy-outline" id="modalWhats" href="#">Comprar pelo WhatsApp</a>
+      <a class="modal-buy-outline" id="modalEsgotado" href="#">Esgotado</a>
+    </div>
+  </div>
 </div>
+
+
+  
   <script>
     (function(){
       var wrap = document.getElementById('bannerCarousel');
