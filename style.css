@@ -213,7 +213,6 @@ button{ font-family:inherit; }
 }
  
 .modal-close{
-  position: absolute;
   align-self: flex-end;
   display: flex;
   align-items: center;
