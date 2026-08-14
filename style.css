@@ -205,13 +205,15 @@ button{ font-family:inherit; }
   max-width: 832px;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 16px;
+  padding: 16px;  
+  position: relative;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 16px;
 }
  
 .modal-close{
+  position: absolute;
   align-self: flex-end;
   display: flex;
   align-items: center;
