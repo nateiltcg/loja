@@ -224,7 +224,6 @@
       </div>
       <a class="modal-buy" id="modalLiga" href="#">Comprar na Liga BRA</a>
       <a class="modal-buy-outline" id="modalWhats" href="#">Comprar pelo WhatsApp</a>
-      <a class="modal-buy-outline" id="modalEsgotado" href="#">Esgotado</a>
     </div>
   </div>
 </div>
@@ -233,71 +232,46 @@
   
   <script>
     (function(){
-      var wrap = document.getElementById('bannerCarousel');
-      var slides = wrap.querySelectorAll('.pg-slide');
-      var dotsWrap = wrap.querySelector('.pg-banner-dots');
-      var current = 0;
-      var intervalMs = 5000;
-      var timer;
+  var overlay = document.getElementById('productModal');
+  var imgEl = document.getElementById('modalImg');
+  var titleEl = document.getElementById('modalTitle');
+  var subtitleEl = document.getElementById('modalSubtitle');
+  var precoEl = document.getElementById('modalPreco');
+  var pixEl = document.getElementById('modalPix');
+  var parceladoEl = document.getElementById('modalParcelado');
+  var ligaEl = document.getElementById('modalLiga');
+  var whatsEl = document.getElementById('modalWhats');
+  var closeBtn = document.getElementById('modalCloseBtn');
 
-      slides.forEach(function(_, i){
-        var dot = document.createElement('button');
-        dot.setAttribute('aria-label', 'Ir para o slide ' + (i + 1));
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', function(){
-          goTo(i);
-          resetTimer();
-        });
-        dotsWrap.appendChild(dot);
-      });
+  // pega TODOS os botões "Comprar" da grade que tenham data-title
+  document.querySelectorAll('[data-title]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      imgEl.src = btn.dataset.img;
+      imgEl.alt = btn.dataset.title;
+      titleEl.textContent = btn.dataset.title;
+      subtitleEl.textContent = btn.dataset.subtitle;
+      precoEl.textContent = btn.dataset.price;
+      pixEl.textContent = btn.dataset.pix;
+      parceladoEl.textContent = btn.dataset.installments;
+      ligaEl.href = btn.dataset.liga;
+      whatsEl.href = btn.dataset.whats;
 
-      var dots = dotsWrap.querySelectorAll('button');
-
-      function goTo(index){
-        slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        current = index;
-        slides[current].classList.add('active');
-        dots[current].classList.add('active');
-      }
-
-      function next(){
-        if (slides.length < 2) return;
-        goTo((current + 1) % slides.length);
-      }
-
-      function resetTimer(){
-        clearInterval(timer);
-        if (slides.length > 1) timer = setInterval(next, intervalMs);
-      }
-
-      resetTimer();
-    })();
-    const modal = document.querySelector(".modal-overlay");
-
-const botoes = document.querySelectorAll(".pg-buy");
-
-const fechar = document.querySelector(".modal-close");
-
-
-botoes.forEach(function(botao){
-
-    botao.addEventListener("click", function(event){
-
-        event.preventDefault();
-
-        modal.style.display = "flex";
-
+      overlay.classList.add('open');
     });
+  });
 
-});
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
 
-
-fechar.addEventListener("click", function(){
-
-    modal.style.display = "none";
-
-});
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+})();
   </script>
 </body>
 </html>
