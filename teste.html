@@ -44,9 +44,18 @@
       </div>
       <div class="pg-banner-dots"></div>
     </section>
+        <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
+    <section class="pg-grid" id="produtos">
 
-    <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
-    <section class="pg-grid" id="produtos"></section>
+        <script>
+    fetch('produtos.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('produtos').innerHTML = html;
+        inicializarBotoesComprar();
+      });
+  </script>
+    </section>
   </main>
 
   <footer class="pg-footer" id="contato">
@@ -146,14 +155,7 @@
   </script>
 
 
-  <script>
-    fetch('produtos.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('produtos').innerHTML = html;
-        inicializarBotoesComprar();
-      });
-  </script>
+
 
 </body>
 </html>
