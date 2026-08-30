@@ -3,136 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nateil TCG — Em breve</title>
-<meta name="description" content="Loja de cartas Pokémon. Em breve por aqui.">
+<title>Nateil TCG</title>
+<meta name="description" content="Confira os produtos disponíveis na Nateil TCG: blisters, boosters, caixas e muito mais.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<style>
-
-  :root{
-    --bg: #002036;
-    --heading: #E2E2E2;
-  }
-
-  *{ box-sizing: border-box; }
-
-  html,body{ margin:0; padding:0; }
-
-  body{
-    background: var(--bg);
-    min-height: 100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    padding: 40px 20px;
-  }
-
-  .hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap: 52px;
-    width:100%;
-    max-width: 497px;
-  }
-
-  h1{
-    margin:0;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--heading);
-    text-align:center;
-    font-size: clamp(2.6rem, 11vw, 5rem);
-    line-height: normal;
-  }
-
-  /* illustration + wordmark block */
-  .art{
-    position: relative;
-    width: 100%;
-    max-width: 497px;
-    aspect-ratio: 497 / 297.2225;
-  }
-  .art img{
-    position:absolute;
-    display:block;
-  }
-  .art .illustration{
-    left:0; top:0;
-    width:100%;
-    height: 68.32%;
-  }
-  .art .wordmark{
-    left: 21.43%;
-    top: 78.08%;
-    width: 52.18%;
-    height: 21.93%;
-  }
-
-  /* social row */
-  .socials{
-  width: 100%;
-  max-width: 425px;
-}
-.socials nav{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.socials a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  outline-offset: 3px;
-  transition: opacity .2s ease, transform .2s ease;
-}
-.socials a img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.socials a:hover,
-.socials a:focus-visible{
-  opacity: .8;
-  transform: translateY(-2px);
-}
-.socials a:focus-visible{
-  outline: 2px solid #E2E2E2;
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <main class="hero">
-
-    <h1>em breve</h1>
-
-    <div class="art">
-      <img class="illustration"
-           src="assets/nateil.svg"
-           alt="Nateil TCG">
+  <header class="pg-header">
+    <div class="pg-logo-row">
+      <a href="index.html">
+        <img src="assets/nateil.svg" alt="Nateil TCG">
+      </a>
     </div>
 
-    <div class="socials">
-      <nav aria-label="Redes sociais">
-        <a class="whatsapp" href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" aria-label="WhatsApp"><img src="assets/whats.svg" alt="" aria-hidden="true"></a>
-        <a class="instagram" href="https://www.instagram.com/nateil.tcg/" aria-label="Instagram"><img src="assets/insta.svg" alt="" aria-hidden="true"></a>
-        <a class="tiktok" href="https://www.tiktok.com/@nateil.tcg" aria-label="TikTok"><img src="assets/tiktok.svg" alt="" aria-hidden="true"></a>
-        <a class="youtube" href="https://www.youtube.com/@nateil" aria-label="YouTube"><img src="assets/youtube.svg" alt="" aria-hidden="true"></a>
-        <a class="mypcards" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="Perfil na MyPCards"><img src="assets/mypcards.svg" alt="" aria-hidden="true"></a>
-      </nav>
-    </div>
+    <nav class="pg-nav" aria-label="Navegação principal">
+      <a href="index.html" class="active" aria-current="page">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1v-9"/></svg>
+        Início
+      </a>
+      <a href="#produtos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Produtos
+      </a>
+      <a href="#contato">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        Contato
+      </a>
+    </nav>
+  </header>
 
+  <main class="wrap pg-main">
+
+    <section class="pg-banner" id="bannerCarousel">
+      <div class="pg-slide active">
+        <a href="https://www.tiktok.com/live/event/7677496727439409153?enter_from=personal_live_event_card" target="_blank" rel="noopener noreferrer"><img src="assets/banner_sorteio.png" alt="Coleção Escuridão Absoluta, já disponível"></a>
+      </div>
+      <div class="pg-banner-dots"></div>
+    </section>
+        <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
+    <section class="pg-grid" id="produtos">
+
+        <script>
+    fetch('produtos.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('produtos').innerHTML = html;
+        inicializarBotoesComprar();
+      });
+  </script>
+    </section>
   </main>
+
+  <footer class="pg-footer" id="contato">
+    <div class="wrap pg-footer-inner">
+
+      <div class="pg-footer-brand">
+        <p>Nateil TCG</p>
+        <ul class="pg-footer-links">
+          <li><a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+          <li><a href="comocomprar.html">Como comprar</a></li>
+        </ul>
+      </div>
+
+      <div class="pg-footer-right">
+        <div class="pg-socials">
+          <a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/whats.svg" alt=""></a>
+          <a href="https://www.instagram.com/nateil.tcg/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/tiktok.svg" alt=""></a>
+          <a href="https://www.tiktok.com/@nateil.tcg" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/youtube.svg" alt=""></a>
+          <a href="https://www.youtube.com/@nateil" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/insta.svg" alt=""></a>
+          <a href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="MyPCards"><img src="assets/mypcards.svg" alt=""></a>
+        </div>
+        <div class="pg-copyright">
+          <span>© 2026 Nateil TCG. Todos os direitos reservados</span>
+          <span>Pokémon Company International ©</span>
+          <span>Copag ©</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL DE PRODUTO -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal-close" id="modalCloseBtn">×</button>
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-right">
+        <h2 id="modalTitle"></h2>
+        <p class="modal-subtitle" id="modalSubtitle"></p>
+        <div class="modal-price">
+          <p class="preco" id="modalPreco"></p>
+          <p class="pix" id="modalPix"></p>
+          <p class="parcelado" id="modalParcelado"></p>
+        </div>
+        <a class="modal-buy" id="modalTiktok" href="#" target="_blank" rel="noopener noreferrer">Comprar na LigaBRA</a>
+        <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var overlay = document.getElementById('productModal');
+    var imgEl = document.getElementById('modalImg');
+    var titleEl = document.getElementById('modalTitle');
+    var subtitleEl = document.getElementById('modalSubtitle');
+    var precoEl = document.getElementById('modalPreco');
+    var pixEl = document.getElementById('modalPix');
+    var parceladoEl = document.getElementById('modalParcelado');
+    var tiktokEl = document.getElementById('modalTiktok');
+    var whatsEl = document.getElementById('modalWhats');
+    var closeBtn = document.getElementById('modalCloseBtn');
+
+    // função reutilizável, chamada de novo sempre que novos produtos chegam via fetch
+    window.inicializarBotoesComprar = function(){
+      document.querySelectorAll('[data-title]').forEach(function(btn){
+        btn.addEventListener('click', function(){
+          imgEl.src = btn.dataset.img;
+          imgEl.alt = btn.dataset.title;
+          titleEl.textContent = btn.dataset.title;
+          subtitleEl.textContent = btn.dataset.subtitle;
+          precoEl.textContent = btn.dataset.price;
+          pixEl.textContent = btn.dataset.pix;
+          parceladoEl.textContent = btn.dataset.installments;
+          tiktokEl.href = btn.dataset.tiktok;
+          whatsEl.href = btn.dataset.whats;
+
+          overlay.classList.add('open');
+        });
+      });
+    };
+
+    function closeModal(){
+      overlay.classList.remove('open');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+  </script>
+
+
+
 
 </body>
 </html>
