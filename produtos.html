@@ -223,7 +223,7 @@
 
   
   <script>
-    (function(){
+(function(){
   var overlay = document.getElementById('productModal');
   var imgEl = document.getElementById('modalImg');
   var titleEl = document.getElementById('modalTitle');
@@ -234,28 +234,30 @@
   var tiktokEl = document.getElementById('modalTiktok');
   var whatsEl = document.getElementById('modalWhats');
   var closeBtn = document.getElementById('modalCloseBtn');
-
-  // pega TODOS os botões "Comprar" da grade que tenham data-title
-  document.querySelectorAll('[data-title]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      imgEl.src = btn.dataset.img;
-      imgEl.alt = btn.dataset.title;
-      titleEl.textContent = btn.dataset.title;
-      subtitleEl.textContent = btn.dataset.subtitle;
-      precoEl.textContent = btn.dataset.price;
-      pixEl.textContent = btn.dataset.pix;
-      parceladoEl.textContent = btn.dataset.installments;
-      tiktokEl.href = btn.dataset.tiktok;
-      whatsEl.href = btn.dataset.whats;
-
-      overlay.classList.add('open');
+ 
+  // agora é uma função reutilizável, chamada sempre que novos produtos chegam
+  window.inicializarBotoesComprar = function(){
+    document.querySelectorAll('[data-title]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        imgEl.src = btn.dataset.img;
+        imgEl.alt = btn.dataset.title;
+        titleEl.textContent = btn.dataset.title;
+        subtitleEl.textContent = btn.dataset.subtitle;
+        precoEl.textContent = btn.dataset.price;
+        pixEl.textContent = btn.dataset.pix;
+        parceladoEl.textContent = btn.dataset.installments;
+        tiktokEl.href = btn.dataset.tiktok;
+        whatsEl.href = btn.dataset.whats;
+ 
+        overlay.classList.add('open');
+      });
     });
-  });
-
+  };
+ 
   function closeModal(){
     overlay.classList.remove('open');
   }
-
+ 
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e){
     if (e.target === overlay) closeModal();
