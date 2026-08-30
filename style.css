@@ -376,7 +376,7 @@ button{ font-family:inherit; }
   gap: 4px;
   font-weight:500;
   font-size: .72rem;
-  color: var(--text);
+  color: var(--text);}
 /* ---------- featured product (home) ---------- */
 .pg-featured{
   display:flex;
