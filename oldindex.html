@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nateil TCG — Em breve</title>
+<meta name="description" content="Loja de cartas Pokémon. Em breve por aqui.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+
+  :root{
+    --bg: #002036;
+    --heading: #E2E2E2;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{ margin:0; padding:0; }
+
+  body{
+    background: var(--bg);
+    min-height: 100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 40px 20px;
+  }
+
+  .hero{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 52px;
+    width:100%;
+    max-width: 497px;
+  }
+
+  h1{
+    margin:0;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--heading);
+    text-align:center;
+    font-size: clamp(2.6rem, 11vw, 5rem);
+    line-height: normal;
+  }
+
+  /* illustration + wordmark block */
+  .art{
+    position: relative;
+    width: 100%;
+    max-width: 497px;
+    aspect-ratio: 497 / 297.2225;
+  }
+  .art img{
+    position:absolute;
+    display:block;
+  }
+  .art .illustration{
+    left:0; top:0;
+    width:100%;
+    height: 68.32%;
+  }
+  .art .wordmark{
+    left: 21.43%;
+    top: 78.08%;
+    width: 52.18%;
+    height: 21.93%;
+  }
+
+  /* social row */
+  .socials{
+  width: 100%;
+  max-width: 425px;
+}
+.socials nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.socials a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  outline-offset: 3px;
+  transition: opacity .2s ease, transform .2s ease;
+}
+.socials a img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.socials a:hover,
+.socials a:focus-visible{
+  opacity: .8;
+  transform: translateY(-2px);
+}
+.socials a:focus-visible{
+  outline: 2px solid #E2E2E2;
+}
+
+</style>
+</head>
+<body>
+
+  <main class="hero">
+
+    <h1>em breve</h1>
+
+    <div class="art">
+      <img class="illustration"
+           src="assets/nateil.svg"
+           alt="Nateil TCG">
+    </div>
+
+    <div class="socials">
+      <nav aria-label="Redes sociais">
+        <a class="whatsapp" href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" aria-label="WhatsApp"><img src="assets/whats.svg" alt="" aria-hidden="true"></a>
+        <a class="instagram" href="https://www.instagram.com/nateil.tcg/" aria-label="Instagram"><img src="assets/insta.svg" alt="" aria-hidden="true"></a>
+        <a class="tiktok" href="https://www.tiktok.com/@nateil.tcg" aria-label="TikTok"><img src="assets/tiktok.svg" alt="" aria-hidden="true"></a>
+        <a class="youtube" href="https://www.youtube.com/@nateil" aria-label="YouTube"><img src="assets/youtube.svg" alt="" aria-hidden="true"></a>
+        <a class="mypcards" href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="Perfil na MyPCards"><img src="assets/mypcards.svg" alt="" aria-hidden="true"></a>
+      </nav>
+    </div>
+
+  </main>
+
+</body>
+</html>
