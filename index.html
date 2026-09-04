@@ -47,17 +47,17 @@
         <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
     <section class="pg-grid" id="produtos">
   <script>
-    fetch('produtos-dados.html')
+    fetch('produtospkm.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos-pokemon').innerHTML = html;
+        document.getElementById('produtos').innerHTML = html;
         inicializarBotoesComprar();
       });
  
-    fetch('produtos-lorcana.html')
+    fetch('produtosdl.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos-lorcana').innerHTML = html;
+        document.getElementById('produtos').innerHTML = html;
         inicializarBotoesComprar();
       });
   </script>
