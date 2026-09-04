@@ -45,27 +45,19 @@
       <div class="pg-banner-dots"></div>
     </section> -->
         <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
-   
-    <div class="pg-section-label"><p>Pokémon</p></div>
     <section class="pg-grid" id="produtos">
-
-        <script>
-    fetch('produtospkm.html')
+  <script>
+    fetch('produtos-dados.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos').innerHTML = html;
+        document.getElementById('produtos-pokemon').innerHTML = html;
         inicializarBotoesComprar();
       });
-  </script>
-    </section>
-        <div class="pg-section-label"><p>Lorcana</p></div>
-    <section class="pg-grid" id="produtos">
-
-        <script>
-    fetch('produtosdl.html')
+ 
+    fetch('produtos-lorcana.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos').innerHTML = html;
+        document.getElementById('produtos-lorcana').innerHTML = html;
         inicializarBotoesComprar();
       });
   </script>
