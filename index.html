@@ -50,14 +50,14 @@
     fetch('produtospkm.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos').innerHTML = html;
+        document.getElementById('produtospkm').innerHTML = html;
         inicializarBotoesComprar();
       });
  
     fetch('produtosdl.html')
       .then(res => res.text())
       .then(html => {
-        document.getElementById('produtos').innerHTML = html;
+        document.getElementById('produtosdl').innerHTML = html;
         inicializarBotoesComprar();
       });
   </script>
