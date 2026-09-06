@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<title>Produtos — Nateil TCG</title>
+<meta name="description" content="Confira os produtos disponíveis na Nateil TCG: blisters, boosters, caixas e muito mais.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<!-- GRADE DE PRODUTOS -->
+
+
+        <article class="pg-card">
+        <div class="pg-card-img"><img src="assets/lorcana-deck.png" alt="Deck Box, 12 Wilds Unkwnon"></div>
+        <div class="pg-card-body">
+          <div class="pg-card-text">
+            <h3>Deck Box para 2</h3>
+            <p>12 - Wilds Unkwnon</p>
+          </div>
+   <button class="pg-buy"
+  data-img="assets/lorcana-deck.png.png"
+  data-title="Deck Box para 2"
+  data-subtitle="12 - Wilds Unkwnon"
+  data-price="R$350,00"
+  data-pix="R$300,00 no Pix"
+  data-installments="3x de R$117,00 sem juros"
+  data-tiktok="https://df.olx.com.br/distrito-federal-e-regiao/hobbies-e-colecoes/disney-lorcana-tcg-2-jogadores-starter-deck-wilds-unknown-1532321421?"
+  data-whats="https://wa.me/+5561984129637?text=Quero%20comprar%20Deck%20Lorcana%20Wilds%20Unkwnon">
+  <span>Comprar</span> <img src="assets/seta.svg">
+        </div>
+      </article>
+      <article class="pg-card">
+        <div class="pg-card-img"><img src="assets/blister-triplo-lorcana.png" alt="Blister triplo, 13 - Attack of the Vine!"></div>
+        <div class="pg-card-body">
+          <div class="pg-card-text">
+            <h3>Blister triplo</h3>
+            <p>13 - Attack of the Vine!</p>
+          </div>
+ <button class="pg-buy"
+  data-img="assets/blister-triplo-lorcana.png"
+  data-title="Blister triplo"
+  data-subtitle="13 - Attack of the Vine!"
+  data-price="R$180,00"
+  data-pix="R$160,00 no Pix"
+  data-installments="3x de R$50,00 sem juros"
+  data-tiktok="https://df.olx.com.br/distrito-federal-e-regiao/hobbies-e-colecoes/lorcana-tcg-blister-triplo-attack-of-the-vine-1532323315?"
+  data-whats="https://wa.me/+5561984129637?text=Quero%20comprar%20Blister%20Attack%20of%20the%20Vine!">
+  <span>Comprar</span> <img src="assets/seta.svg">
+</button>
+        </div>
+      </article>
+
+      <article class="pg-card">
+        <div class="pg-card-img"><img src="assets/booster-lorcana.png" alt="Booster, 12 - Wilds Unkwnon"></div>
+        <div class="pg-card-body">
+          <div class="pg-card-text">
+            <h3>Booster</h3>
+            <p>12 - Wilds Unkwnon</p>
+          </div>
+          <button class="pg-buy"
+  data-img="assets/booster-lorcana.png"
+  data-title="Booster"
+  data-subtitle="12 - Wilds Unknon"
+  data-price="R$50,00"
+  data-pix="R$45,00 no Pix"
+  data-installments="3x de R$17,00 sem juros"
+  data-tiktok="https://df.olx.com.br/distrito-federal-e-regiao/hobbies-e-colecoes/booster-avulso-wilds-unknown-1532322236?"
+  data-whats="https://wa.me/+5561984129637?text=Quero%20comprar%20Booster%20Wilds%20Unkwnon">
+  <span>Comprar</span> <img src="assets/seta.svg">
+</button>
+        </div>
+      </article>
+  
+<div class="modal-overlay" id="productModal">
+  <div class="modal">
+    <button class="modal-close" id="modalCloseBtn">×</button>
+    <div class="modal-left">
+      <img id="modalImg" src="" alt="">
+    </div>
+    <div class="modal-right">
+      <h2 id="modalTitle"></h2>
+      <p class="modal-subtitle" id="modalSubtitle"></p>
+      <div class="modal-price">
+        <p class="preco" id="modalPreco"></p>
+        <p class="pix" id="modalPix"></p>
+        <p class="parcelado" id="modalParcelado"></p>
+      </div>
+      <a class="modal-buy" id="modalTiktok" href="#" target="_blank">Comprar na LigaBRA</a>
+      <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank">Comprar pelo WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+
+  
+  <script>
+(function(){
+  var overlay = document.getElementById('productModal');
+  var imgEl = document.getElementById('modalImg');
+  var titleEl = document.getElementById('modalTitle');
+  var subtitleEl = document.getElementById('modalSubtitle');
+  var precoEl = document.getElementById('modalPreco');
+  var pixEl = document.getElementById('modalPix');
+  var parceladoEl = document.getElementById('modalParcelado');
+  var tiktokEl = document.getElementById('modalTiktok');
+  var whatsEl = document.getElementById('modalWhats');
+  var closeBtn = document.getElementById('modalCloseBtn');
+ 
+  // agora é uma função reutilizável, chamada sempre que novos produtos chegam
+  window.inicializarBotoesComprar = function(){
+    document.querySelectorAll('[data-title]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        imgEl.src = btn.dataset.img;
+        imgEl.alt = btn.dataset.title;
+        titleEl.textContent = btn.dataset.title;
+        subtitleEl.textContent = btn.dataset.subtitle;
+        precoEl.textContent = btn.dataset.price;
+        pixEl.textContent = btn.dataset.pix;
+        parceladoEl.textContent = btn.dataset.installments;
+        tiktokEl.href = btn.dataset.tiktok;
+        whatsEl.href = btn.dataset.whats;
+ 
+        overlay.classList.add('open');
+      });
+    });
+  };
+ 
+  function closeModal(){
+    overlay.classList.remove('open');
+  }
+ 
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+  </script>
+</body>
+</html>
