@@ -8,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -45,14 +46,32 @@
       <div class="pg-banner-dots"></div>
     </section>
 
-    <!-- CATEGORIA: POKÉMON -->
-    <div class="pg-section-label"><p>Pokémon</p></div>
-    <section class="pg-grid" id="produtos-pokemon"></section>
+ <!-- PRODUTOS EM DESTAQUE -->
+<section class="hs-section">
+  <div class="hs-head">
+    <div class="hs-title"><span class="bar"></span><p>Produtos em destaque</p></div>
+    <a class="hs-link" href="#produtos-destaque"><span>Todos os produtos</span></a>
+  </div>
+  <section class="pg-grid" id="produtos-destaque"></section>
+</section>
 
-    <!-- CATEGORIA: LORCANA -->
-    <div class="pg-section-label"><p>Lorcana</p></div>
-    <section class="pg-grid" id="produtos-lorcana"></section>
+<!-- CARTAS EM DESTAQUE -->
+<section class="hs-section">
+  <div class="hs-head">
+    <div class="hs-title"><span class="bar"></span><p>Cartas em destaque</p></div>
+    <a class="hs-link" href="#cartas-destaque"><span>Todas as cartas</span></a>
+  </div>
+  <section class="pg-grid" id="cartas-destaque"></section>
+</section>
 
+<!-- OUTROS PRODUTOS -->
+<section class="hs-section">
+  <div class="hs-head">
+    <div class="hs-title"><span class="bar"></span><p>Outros produtos</p></div>
+    <a class="hs-link" href="#outros-produtos"><span>Todos os produtos</span></a>
+  </div>
+  <section class="pg-grid" id="outros-produtos"></section>
+</section>
   </main>
 
   <footer class="pg-footer" id="contato">
@@ -156,19 +175,14 @@
   </script>
 
   <script>
-    fetch('produtos-dados.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('produtos-pokemon').innerHTML = html;
-        inicializarBotoesComprar();
-      });
-
-    fetch('produtos-lorcana.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('produtos-lorcana').innerHTML = html;
-        inicializarBotoesComprar();
-      });
+    ['produtos-destaque', 'cartas-destaque', 'outros-produtos'].forEach(function(id){
+      fetch('produtos-dados.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById(id).innerHTML = html;
+          inicializarBotoesComprar();
+        });
+    });
   </script>
 
 </body>
