@@ -25,7 +25,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1v-9"/></svg>
         Início
       </a>
-      <a href="#produtos">
+      <a href="#produtos-pokemon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         Produtos
       </a>
@@ -44,18 +44,15 @@
       </div>
       <div class="pg-banner-dots"></div>
     </section>
-        <!-- GRADE DE PRODUTOS — os cards são carregados aqui via fetch (mesmo arquivo que a produtos.html usa) -->
-    <section class="pg-grid" id="produtos">
 
-        <script>
-    fetch('produtos.html')
-      .then(res => res.text())
-      .then(html => {
-        document.getElementById('produtos').innerHTML = html;
-        inicializarBotoesComprar();
-      });
-  </script>
-    </section>
+    <!-- CATEGORIA: POKÉMON -->
+    <div class="pg-section-label"><p>Pokémon</p></div>
+    <section class="pg-grid" id="produtos-pokemon"></section>
+
+    <!-- CATEGORIA: LORCANA -->
+    <div class="pg-section-label"><p>Lorcana</p></div>
+    <section class="pg-grid" id="produtos-lorcana"></section>
+
   </main>
 
   <footer class="pg-footer" id="contato">
@@ -124,6 +121,10 @@
     // função reutilizável, chamada de novo sempre que novos produtos chegam via fetch
     window.inicializarBotoesComprar = function(){
       document.querySelectorAll('[data-title]').forEach(function(btn){
+        // evita re-adicionar o mesmo listener duas vezes no mesmo botão
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "true";
+
         btn.addEventListener('click', function(){
           imgEl.src = btn.dataset.img;
           imgEl.alt = btn.dataset.title;
@@ -154,8 +155,21 @@
   })();
   </script>
 
+  <script>
+    fetch('produtos-dados.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('produtos-pokemon').innerHTML = html;
+        inicializarBotoesComprar();
+      });
 
-
+    fetch('produtos-lorcana.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('produtos-lorcana').innerHTML = html;
+        inicializarBotoesComprar();
+      });
+  </script>
 
 </body>
 </html>
