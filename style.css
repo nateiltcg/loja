@@ -13,7 +13,7 @@
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  background: var(--bg);
+  background: linear-gradient(172.43deg, #002036 1.62%, #034265 95.72%);
   color: var(--text);
   font-family: var(--font-display);
   -webkit-font-smoothing: antialiased;
