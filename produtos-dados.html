@@ -247,7 +247,6 @@
         <p class="parcelado" id="modalParcelado"></p>
       </div>
      <a class="modal-buy" id="modalTiktok" href="#" target="_blank">Comprar no Tiktok Shop</a>
-      <a class="modal-buy" id="modalMypcards" href="#" target="_blank">Comprar no MyPCards</a>
       <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank">Comprar pelo WhatsApp</a>
     </div>
   </div>
@@ -265,7 +264,6 @@
   var pixEl = document.getElementById('modalPix');
   var parceladoEl = document.getElementById('modalParcelado');
   var tiktokEl = document.getElementById('modalTiktok');
-  var mypcardsEl = document.getElementById('modalMypcards');
   var whatsEl = document.getElementById('modalWhats');
   var closeBtn = document.getElementById('modalCloseBtn');
  
@@ -281,7 +279,6 @@
         pixEl.textContent = btn.dataset.pix;
         parceladoEl.textContent = btn.dataset.installments;
         tiktokEl.href = btn.dataset.tiktok;
-        mypcardsEl.href = btn.dataset.mypcards;
         whatsEl.href = btn.dataset.whats;
  
         overlay.classList.add('open');
