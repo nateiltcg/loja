@@ -172,16 +172,26 @@
   })();
   </script>
 
-  <script>
-    ['produtos-destaque', 'cartas-destaque', 'outros-produtos'].forEach(function(id){
-      fetch('produtos-dados.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById(id).innerHTML = html;
-          inicializarBotoesComprar();
+   <script>
+    fetch('produtos-dados.html')
+      .then(res => res.text())
+      .then(html => {
+        var temp = document.createElement('div');
+        temp.innerHTML = html;
+ 
+        temp.querySelectorAll('.pg-card').forEach(function(card){
+          var categoria = card.dataset.category;
+          var alvoId =
+            categoria === 'cartas' ? 'cartas-destaque' :
+            categoria === 'outros' ? 'outros-produtos' :
+            'produtos-destaque';
+ 
+          var alvo = document.getElementById(alvoId);
+          if (alvo) alvo.appendChild(card);
         });
-    });
+ 
+        inicializarBotoesComprar();
+      });
   </script>
-
 </body>
 </html>
