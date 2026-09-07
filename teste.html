@@ -119,6 +119,7 @@
           <p class="parcelado" id="modalParcelado"></p>
         </div>
         <a class="modal-buy" id="modalTiktok" href="#" target="_blank" rel="noopener noreferrer">Comprar no TikTok Shop</a>
+        <a class="modal-buy" id="modalOlx" href="#" target="_blank" rel="noopener noreferrer">Comprar na OLX</a>
         <a class="modal-buy" id="modalMypcards" href="#" target="_blank" rel="noopener noreferrer">Comprar no MyPCards</a>
         <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
       </div>
@@ -135,6 +136,7 @@
     var pixEl = document.getElementById('modalPix');
     var parceladoEl = document.getElementById('modalParcelado');
     var tiktokEl = document.getElementById('modalTiktok');
+    var olxEl = document.getElementById('modalOlx');
     var mypcardsEl = document.getElementById('modalMypcards');
     var whatsEl = document.getElementById('modalWhats');
     var closeBtn = document.getElementById('modalCloseBtn');
@@ -166,6 +168,7 @@
           parceladoEl.textContent = btn.dataset.installments || '';
 
           setLinkOrHide(tiktokEl, btn.dataset.tiktok);
+          setLinkOrHide(olxEl, btn.dataset.olx);
           setLinkOrHide(mypcardsEl, btn.dataset.mypcards);
           setLinkOrHide(whatsEl, btn.dataset.whats);
 
