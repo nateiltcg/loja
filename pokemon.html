@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nateil TCG</title>
+<meta name="description" content="Confira os produtos disponíveis na Nateil TCG: blisters, boosters, caixas e muito mais.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="pg-header">
+    <div class="pg-logo-row">
+      <a href="index.html">
+        <img src="assets/nateil.svg" alt="Nateil TCG">
+      </a>
+    </div>
+
+    <nav class="pg-nav" aria-label="Navegação principal">
+      <a href="pokemon.html">
+        Pokemon
+      </a>
+      <a href="lorcana.html">
+        Lorcana
+      </a>
+      <a href="acessorios.html">
+        Acessórios
+      </a>      
+      <a href="personalizados.html">
+        Produtos personalizados
+      </a>
+      <a href="brinquedos.html">
+        Blind Box/Brinquedos
+      </a>
+    </nav>
+  </header>
+
+  <main class="wrap pg-main">
+
+    <section class="pg-banner" id="bannerCarousel">
+      <div class="pg-slide active">
+        <a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer"><img src="assets/banner_whats.png" alt="Entre no nosso grupo do WhatsApp!"></a>
+      </div>
+      <div class="pg-banner-dots"></div>
+    </section>
+
+    <!-- PRODUTOS POKEMON -->
+    <section class="hs-section">
+      <div class="hs-head">
+        <div class="hs-title"><span class="bar"></span><p>Produtos pokemon</p></div>
+      </div>
+      <section class="pg-grid" id="produtos-pokemon"></section>
+    </section>
+
+    <!-- CARTAS POKEMON -->
+    <section class="hs-section">
+      <div class="hs-head">
+        <div class="hs-title"><span class="bar"></span><p>Cartas pokemon</p></div>
+      </div>
+      <section class="pg-grid" id="cartas-pokemon"></section>
+    </section>
+
+  </main>
+
+  <footer class="pg-footer" id="contato">
+    <div class="wrap pg-footer-inner">
+
+      <div class="pg-footer-brand">
+        <p>Nateil TCG</p>
+        <ul class="pg-footer-links">
+          <li><a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer">Whatsapp</a></li>
+          <li><a href="comocomprar.html">Como comprar</a></li>
+        </ul>
+      </div>
+
+      <div class="pg-footer-right">
+        <div class="pg-socials">
+          <a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/whats.svg" alt=""></a>
+          <a href="https://www.instagram.com/nateil.tcg/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><img src="assets/tiktok.svg" alt=""></a>
+          <a href="https://www.tiktok.com/@nateil.tcg" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><img src="assets/youtube.svg" alt=""></a>
+          <a href="https://www.youtube.com/@nateil" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/insta.svg" alt=""></a>
+          <a href="https://mypcards.com/Nateil" target="_blank" rel="noopener noreferrer" aria-label="MyPCards"><img src="assets/mypcards.svg" alt=""></a>
+        </div>
+        <div class="pg-copyright">
+          <span>© 2026 Nateil TCG. Todos os direitos reservados</span>
+          <span>Pokémon Company International ©</span>
+          <span>Copag ©</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL DE PRODUTO -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal">
+      <button class="modal-close" id="modalCloseBtn">×</button>
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="modal-right">
+        <h2 id="modalTitle"></h2>
+        <p class="modal-subtitle" id="modalSubtitle"></p>
+        <div class="modal-price">
+          <p class="preco" id="modalPreco"></p>
+          <p class="pix" id="modalPix"></p>
+          <p class="parcelado" id="modalParcelado"></p>
+        </div>
+        <a class="modal-buy" id="modalTiktok" href="#" target="_blank" rel="noopener noreferrer">Comprar no TikTok Shop</a>
+        <a class="modal-buy" id="modalOlx" href="#" target="_blank" rel="noopener noreferrer">Comprar na OLX</a>
+        <a class="modal-buy" id="modalMypcards" href="#" target="_blank" rel="noopener noreferrer">Comprar no MyPCards</a>
+        <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    var overlay = document.getElementById('productModal');
+    var imgEl = document.getElementById('modalImg');
+    var titleEl = document.getElementById('modalTitle');
+    var subtitleEl = document.getElementById('modalSubtitle');
+    var precoEl = document.getElementById('modalPreco');
+    var pixEl = document.getElementById('modalPix');
+    var parceladoEl = document.getElementById('modalParcelado');
+    var tiktokEl = document.getElementById('modalTiktok');
+    var olxEl = document.getElementById('modalOlx');
+    var mypcardsEl = document.getElementById('modalMypcards');
+    var whatsEl = document.getElementById('modalWhats');
+    var closeBtn = document.getElementById('modalCloseBtn');
+
+    // mostra ou esconde um botão de link, dependendo se o produto tem esse dado ou não
+    function setLinkOrHide(el, value){
+      if (value){
+        el.href = value;
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    }
+
+    // função reutilizável, chamada de novo sempre que novos produtos chegam via fetch
+    window.inicializarBotoesComprar = function(){
+      document.querySelectorAll('[data-title]').forEach(function(btn){
+        // evita re-adicionar o mesmo listener duas vezes no mesmo botão
+        if (btn.dataset.bound) return;
+        btn.dataset.bound = "true";
+
+        btn.addEventListener('click', function(){
+          imgEl.src = btn.dataset.img;
+          imgEl.alt = btn.dataset.title;
+          titleEl.textContent = btn.dataset.title;
+          subtitleEl.textContent = btn.dataset.subtitle;
+          precoEl.textContent = btn.dataset.price;
+          pixEl.textContent = btn.dataset.pix || '';
+          parceladoEl.textContent = btn.dataset.installments || '';
+
+          setLinkOrHide(tiktokEl, btn.dataset.tiktok);
+          setLinkOrHide(olxEl, btn.dataset.olx);
+          setLinkOrHide(mypcardsEl, btn.dataset.mypcards);
+          setLinkOrHide(whatsEl, btn.dataset.whats);
+
+          overlay.classList.add('open');
+        });
+      });
+    };
+
+    function closeModal(){
+      overlay.classList.remove('open');
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', function(e){
+      if (e.target === overlay) closeModal();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+  </script>
+
+  <script>
+    fetch('produtos-pokemon.html')
+      .then(res => res.text())
+      .then(html => {
+        var temp = document.createElement('div');
+        temp.innerHTML = html;
+ 
+        temp.querySelectorAll('.pg-card').forEach(function(card){
+          var categoria = card.dataset.category;
+          var alvoId =
+            categoria === 'cartas' ? 'cartas-destaque' :
+            categoria === 'outros' ? 'outros-produtos' :
+            'produtos-destaque';
+ 
+          var alvo = document.getElementById(alvoId);
+          if (alvo) alvo.appendChild(card);
+        });
+ 
+        inicializarBotoesComprar();
+      });
+  </script>
+
+</body>
+</html>
