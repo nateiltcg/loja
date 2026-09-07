@@ -8,6 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9a1 1 0 0 0 1 1h3v-6h6v6h3a1 1 0 0 0 1-1v-9"/></svg>
         Início
       </a>
-      <a href="#produtos-pokemon">
+      <a href="#produtos-destaque">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         Produtos
       </a>
@@ -44,32 +45,33 @@
       <div class="pg-banner-dots"></div>
     </section>
 
- <!-- PRODUTOS EM DESTAQUE -->
-<section class="hs-section">
-  <div class="hs-head">
-    <div class="hs-title"><span class="bar"></span><p>Produtos em destaque</p></div>
-    <a class="hs-link" href="#produtos-destaque"><span>Todos os produtos</span></a>
-  </div>
-  <section class="pg-grid" id="produtos-destaque"></section>
-</section>
+    <!-- PRODUTOS EM DESTAQUE -->
+    <section class="hs-section">
+      <div class="hs-head">
+        <div class="hs-title"><span class="bar"></span><p>Produtos em destaque</p></div>
+        <a class="hs-link" href="#produtos-destaque"><span>Todos os produtos</span></a>
+      </div>
+      <section class="pg-grid" id="produtos-destaque"></section>
+    </section>
 
-<!-- CARTAS EM DESTAQUE -->
-<section class="hs-section">
-  <div class="hs-head">
-    <div class="hs-title"><span class="bar"></span><p>Cartas em destaque</p></div>
-    <a class="hs-link" href="#cartas-destaque"><span>Todas as cartas</span></a>
-  </div>
-  <section class="pg-grid" id="cartas-destaque"></section>
-</section>
+    <!-- CARTAS EM DESTAQUE -->
+    <section class="hs-section">
+      <div class="hs-head">
+        <div class="hs-title"><span class="bar"></span><p>Cartas em destaque</p></div>
+        <a class="hs-link" href="#cartas-destaque"><span>Todas as cartas</span></a>
+      </div>
+      <section class="pg-grid" id="cartas-destaque"></section>
+    </section>
 
-<!-- OUTROS PRODUTOS -->
-<section class="hs-section">
-  <div class="hs-head">
-    <div class="hs-title"><span class="bar"></span><p>Outros produtos</p></div>
-    <a class="hs-link" href="#outros-produtos"><span>Todos os produtos</span></a>
-  </div>
-  <section class="pg-grid" id="outros-produtos"></section>
-</section>
+    <!-- OUTROS PRODUTOS -->
+    <section class="hs-section">
+      <div class="hs-head">
+        <div class="hs-title"><span class="bar"></span><p>Outros produtos</p></div>
+        <a class="hs-link" href="#outros-produtos"><span>Todos os produtos</span></a>
+      </div>
+      <section class="pg-grid" id="outros-produtos"></section>
+    </section>
+
   </main>
 
   <footer class="pg-footer" id="contato">
@@ -116,7 +118,8 @@
           <p class="pix" id="modalPix"></p>
           <p class="parcelado" id="modalParcelado"></p>
         </div>
-        <a class="modal-buy" id="modalTiktok" href="#" target="_blank" rel="noopener noreferrer">Comprar na LigaBRA</a>
+        <a class="modal-buy" id="modalTiktok" href="#" target="_blank" rel="noopener noreferrer">Comprar no TikTok Shop</a>
+        <a class="modal-buy" id="modalMypcards" href="#" target="_blank" rel="noopener noreferrer">Comprar no MyPCards</a>
         <a class="modal-buy-outline" id="modalWhats" href="#" target="_blank" rel="noopener noreferrer">Comprar pelo WhatsApp</a>
       </div>
     </div>
@@ -132,8 +135,19 @@
     var pixEl = document.getElementById('modalPix');
     var parceladoEl = document.getElementById('modalParcelado');
     var tiktokEl = document.getElementById('modalTiktok');
+    var mypcardsEl = document.getElementById('modalMypcards');
     var whatsEl = document.getElementById('modalWhats');
     var closeBtn = document.getElementById('modalCloseBtn');
+
+    // mostra ou esconde um botão de link, dependendo se o produto tem esse dado ou não
+    function setLinkOrHide(el, value){
+      if (value){
+        el.href = value;
+        el.style.display = '';
+      } else {
+        el.style.display = 'none';
+      }
+    }
 
     // função reutilizável, chamada de novo sempre que novos produtos chegam via fetch
     window.inicializarBotoesComprar = function(){
@@ -148,10 +162,12 @@
           titleEl.textContent = btn.dataset.title;
           subtitleEl.textContent = btn.dataset.subtitle;
           precoEl.textContent = btn.dataset.price;
-          pixEl.textContent = btn.dataset.pix;
-          parceladoEl.textContent = btn.dataset.installments;
-          tiktokEl.href = btn.dataset.tiktok;
-          whatsEl.href = btn.dataset.whats;
+          pixEl.textContent = btn.dataset.pix || '';
+          parceladoEl.textContent = btn.dataset.installments || '';
+
+          setLinkOrHide(tiktokEl, btn.dataset.tiktok);
+          setLinkOrHide(mypcardsEl, btn.dataset.mypcards);
+          setLinkOrHide(whatsEl, btn.dataset.whats);
 
           overlay.classList.add('open');
         });
@@ -172,7 +188,7 @@
   })();
   </script>
 
-   <script>
+  <script>
     fetch('produtos-dados.html')
       .then(res => res.text())
       .then(html => {
@@ -193,5 +209,6 @@
         inicializarBotoesComprar();
       });
   </script>
+
 </body>
 </html>
