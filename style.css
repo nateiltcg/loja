@@ -170,6 +170,16 @@ button{ font-family:inherit; }
   color: var(--text);
 }
 .pg-buy svg{ width:20px; height:20px; color: var(--text); }
+
+.pg-soldout{
+  display:inline-block;
+  padding: 6px 0;
+  font-weight:600;
+  font-size: 1rem;
+  text-transform:uppercase;
+  letter-spacing: .03em;
+  color: var(--text-dim2);
+}
 .modal-overlay{
   position: fixed;
   inset: 0;
@@ -581,3 +591,4 @@ button{ font-family:inherit; }
   .hs-head{ flex-wrap: wrap; }
   .hs-title p{ font-size: 1.1rem; }
 }
+
