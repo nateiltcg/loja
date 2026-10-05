@@ -144,10 +144,20 @@
     var whatsEl = document.getElementById('modalWhats');
     var closeBtn = document.getElementById('modalCloseBtn');
 
-    // mostra ou esconde um botão de link, dependendo se o produto tem esse dado ou não
+    // Mostra ou esconde um botão de link e adiciona os parâmetros UTM automaticamente
     function setLinkOrHide(el, value){
       if (value){
-        el.href = value;
+        try {
+          // Cria um objeto URL para manipular os parâmetros de forma segura
+          var url = new URL(value);
+          url.searchParams.set('utm_source', 'site_nateil');
+          url.searchParams.set('utm_medium', 'hub_links');
+          
+          el.href = url.toString();
+        } catch(e) {
+          // Caso a URL não inclua "http(s)://" ou seja inválida, usa o valor original como segurança
+          el.href = value;
+        }
         el.style.display = '';
       } else {
         el.style.display = 'none';
