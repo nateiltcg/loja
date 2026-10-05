@@ -1,0 +1,34 @@
+[
+  {
+    "id": "item-01",
+    "categoria": "destaque",
+    "titulo": "Elite Trainer Box - 151",
+    "subtitulo": "Coleção Escarlate e Violeta",
+    "imagem": "assets/etb-151.png",
+    "preco": "R$ 350,00",
+    "pix": "R$ 315,00 no PIX",
+    "parcelado": "3x de R$ 116,66 sem juros",
+    "links": {
+      "tiktok": "https://shop.tiktok.com/...",
+      "olx": "",
+      "mypcards": "",
+      "whats": "https://wa.me/..."
+    }
+  },
+  {
+    "id": "item-02",
+    "categoria": "cartas",
+    "titulo": "Charizard ex",
+    "subtitulo": "Obsidiana em Chamas - 223/197",
+    "imagem": "assets/charizard-ex.png",
+    "preco": "R$ 150,00",
+    "pix": "R$ 135,00 no PIX",
+    "parcelado": "2x de R$ 75,00",
+    "links": {
+      "tiktok": "",
+      "olx": "https://olx.com.br/...",
+      "mypcards": "https://mypcards.com/Nateil/...",
+      "whats": "https://wa.me/..."
+    }
+  }
+]
