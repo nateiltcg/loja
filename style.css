@@ -302,43 +302,71 @@ button{ font-family:inherit; }
   color: #D7B55C;
 }
  
-.modal-buy{
+/* Dá um pequeno respiro extra entre o preço e os botões */
+.modal-price {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px; 
+}
+
+/* Base comum para ambos os botões */
+.modal-buy,
+.modal-buy-outline {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 16px;
-  border-radius: 20px;
-  border: none;
+  padding: 14px 20px;
+  border-radius: 12px; /* Cantos um pouco mais modernos e menos arredondados */
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600; /* Texto ligeiramente mais forte para chamar à ação */
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px; /* Melhora a legibilidade */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transição suave para o hover */
+  text-align: center;
+}
+
+/* Estilo do botão principal (TikTok, OLX, MyPCards) */
+.modal-buy {
   background: #FFDF96;
   color: #002036;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  cursor: pointer;
+  border: 2px solid #FFDF96;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-.modal-buy:hover{
-  opacity: .9;
+
+.modal-buy:hover {
+  background: #D7B55C;
+  border-color: #D7B55C;
+  transform: translateY(-2px); /* Efeito de elevação ao passar o rato */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
-.modal-buy-outline{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 16px;
-  border-radius: 20px;
-  border: 1px solid #FFDF96;
+
+/* Estilo do botão secundário (WhatsApp) */
+.modal-buy-outline {
   background: transparent;
   color: #FFDF96;
-  font-family: 'Manrope', sans-serif;
-  font-weight: 500;
-  font-size: 1.125rem;
-  text-transform: uppercase;
-  cursor: pointer;
+  border: 2px solid #FFDF96;
 }
-.modal-buy-outline:hover{
-  background: rgba(255,223,150,0.08);
+
+.modal-buy-outline:hover {
+  background: rgba(255, 223, 150, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Ajustes específicos para ecrãs de telemóvel */
+@media (max-width: 480px) {
+  .modal-right {
+    gap: 12px; /* Reduz o espaço geral entre os elementos no telemóvel */
+  }
+  
+  .modal-buy, 
+  .modal-buy-outline {
+    padding: 12px 16px;
+    font-size: 0.95rem; /* Ajusta o tamanho da fonte para não quebrar o texto */
+  }
 }
 
 /* ---------- footer ---------- */
