@@ -1,34 +1,563 @@
 [
   {
     "id": "item-01",
-    "categoria": "destaque",
-    "titulo": "Elite Trainer Box - 151",
-    "subtitulo": "Coleção Escarlate e Violeta",
-    "imagem": "assets/etb-151.png",
-    "preco": "R$ 350,00",
-    "pix": "R$ 315,00 no PIX",
-    "parcelado": "3x de R$ 116,66 sem juros",
+    "categoria": [
+      "pokemon",
+      "destaque",
+      "chines"
+    ],
+    "titulo": "Eevelutions Blind",
+    "subtitulo": "Dream Painting vol.3",
+    "imagem": "assets/dream-vl3-eevee.png",
+    "preco": "R$380",
+    "pix": "R$350",
+    "parcelado": "5x de R$76 sem juros",
     "links": {
-      "tiktok": "https://shop.tiktok.com/...",
+      "tiktok": "",
       "olx": "",
       "mypcards": "",
-      "whats": "https://wa.me/..."
+      "whats": ""
     }
   },
   {
     "id": "item-02",
-    "categoria": "cartas",
-    "titulo": "Charizard ex",
-    "subtitulo": "Obsidiana em Chamas - 223/197",
-    "imagem": "assets/charizard-ex.png",
-    "preco": "R$ 150,00",
-    "pix": "R$ 135,00 no PIX",
-    "parcelado": "2x de R$ 75,00",
+    "categoria": [
+      "lorcana",
+      "destaque",
+      "deck"
+    ],
+    "titulo": "Starter Deck para 2",
+    "subtitulo": "12 - Wilds Unknown",
+    "imagem": "assets/lorcana-deck.png",
+    "preco": "R$350",
+    "pix": "R$300",
+    "parcelado": "3x de R$117 sem juros",
     "links": {
       "tiktok": "",
-      "olx": "https://olx.com.br/...",
-      "mypcards": "https://mypcards.com/Nateil/...",
-      "whats": "https://wa.me/..."
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-03",
+    "categoria": [
+      "pokemon",
+      "blister"
+    ],
+    "titulo": "Blister triplo",
+    "subtitulo": "ME 05 - Escuridão Absoluta",
+    "imagem": "assets/produto-blister-triplo-escuridao.png",
+    "preco": "R$40",
+    "pix": "R$33",
+    "parcelado": "3x de R$14 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-04",
+    "categoria": [
+      "pokemon",
+      "blister"
+    ],
+    "titulo": "Blister quadruplo",
+    "subtitulo": "ME 05 - Escuridão Absoluta",
+    "imagem": "assets/produto-blister-quadruplo-escuridao.png",
+    "preco": "R$48",
+    "pix": "R$43",
+    "parcelado": "3x de R$16 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-05",
+    "categoria": [
+      "lorcana",
+      "cartas"
+    ],
+    "titulo": "Winnie the Pooh & Piglet - Hunny Mages (234)",
+    "subtitulo": "13 - Attack of the Vine!",
+    "imagem": "assets/poohandpiglet_13_0234.png",
+    "preco": "R$4.999",
+    "pix": "R$3.999",
+    "parcelado": "5x de R$1000 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": "https://wa.me/+5561984129637?text=Quero%20comprar%20Pooh%20And%20Piglet"
+    }
+  },
+  {
+    "id": "item-06",
+    "categoria": [
+      "lorcana",
+      "cartas"
+    ],
+    "titulo": "Peter Pan - Created by the Vine (216)",
+    "subtitulo": "13 - Attack of the Vine!",
+    "imagem": "assets/peterpan_13_0216.png",
+    "preco": "R9",
+    "pix": "R$7",
+    "parcelado": "3x de R$3 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": "https://wa.me/+5561984129637?text=Quero%20comprar%20Peter%20Pan"
+    }
+  },
+  {
+    "id": "item-07",
+    "categoria": [
+      "pokemon",
+      "cartas"
+    ],
+    "titulo": "Mewtwo ex da Equipe Rocket (231/182) (SP)",
+    "subtitulo": "SV10 - Rivais Predestinados",
+    "imagem": "assets/mewtwo_dri_231.png",
+    "preco": "R$1499",
+    "pix": "R$1350",
+    "parcelado": "3x de R$500 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": "https://wa.me/+5561984129637?text=Quero%20comprar%20Mewtwo%20DRI"
+    }
+  },
+  {
+    "id": "item-08",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "decks"
+    ],
+    "titulo": "Deck pré release - Tyrantrum",
+    "subtitulo": "ME 03 - Equilíbrio Perfeito",
+    "imagem": "assets/deck-tyrantrum.png",
+    "preco": "R$40",
+    "pix": "R$35",
+    "parcelado": "3x de R$14 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-09",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "decks"
+    ],
+    "titulo": "Deck pré release - Serperior",
+    "subtitulo": "ME 03 - Equilíbrio Perfeito",
+    "imagem": "assets/deck-serperior.png",
+    "preco": "R$40",
+    "pix": "R$35",
+    "parcelado": "3x de R$14 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-10",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "decks"
+    ],
+    "titulo": "Deck pré release - Flygon",
+    "subtitulo": "ME 02 - Fogo fantasmagórico",
+    "imagem": "assets/deck-flygon.png",
+    "preco": "R$40",
+    "pix": "R$35",
+    "parcelado": "3x de R$14 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-11",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "decks"
+    ],
+    "titulo": "Deck pré release - Toxtricity",
+    "subtitulo": "ME 02 - Fogo fantasmagórico",
+    "imagem": "assets/deck-toxtricity.png",
+    "preco": "R$40",
+    "pix": "R$35",
+    "parcelado": "3x de R$14 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-12",
+    "categoria": [
+      "pokemon",
+      "box"
+    ],
+    "titulo": "Mega Luar - Gengar",
+    "subtitulo": "Box colecionável",
+    "imagem": "assets/mega-luar-gengar.png",
+    "preco": "R$100",
+    "pix": "R$90",
+    "parcelado": "3x de R$34 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-13",
+    "categoria": [
+      "pokemon",
+      "box"
+    ],
+    "titulo": "Mega Luar - Clefable",
+    "subtitulo": "Box colecionável",
+    "imagem": "assets/mega-luar-gengar.png",
+    "preco": "R$100",
+    "pix": "R$90",
+    "parcelado": "3x de R$34 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-14",
+    "categoria": [
+      "pokemon",
+      "box"
+    ],
+    "titulo": "Mega forças - Darkrai",
+    "subtitulo": "Box colecionável",
+    "imagem": "assets/mega-forcas-darkrai.png",
+    "preco": "R$120",
+    "pix": "R$100",
+    "parcelado": "3x de R$40 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-15",
+    "categoria": [
+      "pokemon",
+      "box"
+    ],
+    "titulo": "Mega forças - Zeraora",
+    "subtitulo": "Box colecionável",
+    "imagem": "assets/mega-forcas-zeraora.png",
+    "preco": "R$120",
+    "pix": "R$100",
+    "parcelado": "3x de R$40 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-16",
+    "categoria": [
+      "pokemon",
+      "box"
+    ],
+    "titulo": "Mega forças - Dragonite",
+    "subtitulo": "Box colecionável",
+    "imagem": "assets/mega-forcas-dragonite.png",
+    "preco": "R$120",
+    "pix": "R$100",
+    "parcelado": "3x de R$40 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-17",
+    "categoria": [
+      "pokemon",
+      "deck"
+    ],
+    "titulo": "Mega Diance",
+    "subtitulo": "Baralho de batalha",
+    "imagem": "assets/deck-mega-diance.png",
+    "preco": "R$110",
+    "pix": "R$95",
+    "parcelado": "3x de R$37 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-18",
+    "categoria": [
+      "pokemon",
+      "deck"
+    ],
+    "titulo": "Mega Lucario",
+    "subtitulo": "Baralho de batalha",
+    "imagem": "assets/deck-mega-lucario.png",
+    "preco": "R$100",
+    "pix": "R$90",
+    "parcelado": "3x de R$34 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-19",
+    "categoria": [
+      "pokemon",
+      "deck"
+    ],
+    "titulo": "Charizard Tera",
+    "subtitulo": "Batalha de liga",
+    "imagem": "assets/deck-charizar-tera.png",
+    "preco": "R$95",
+    "pix": "R$85",
+    "parcelado": "3x de R$32 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-20",
+    "categoria": [
+      "pokemon",
+      "deck"
+    ],
+    "titulo": "Steven",
+    "subtitulo": "Batalha de rivais",
+    "imagem": "assets/deck-steven.png",
+    "preco": "R$95",
+    "pix": "R$85",
+    "parcelado": "3x de R$32 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-21",
+    "categoria": [
+      "pokemon",
+      "blister"
+    ],
+    "titulo": "Blister triplo",
+    "subtitulo": "ME 02 - Fogo fantasmagórico",
+    "imagem": "assets/produto-blister-triplo-fogo.png",
+    "preco": "R$48",
+    "pix": "R$43",
+    "parcelado": "3x de R$16 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-22",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "blind"
+    ],
+    "titulo": "Sleeping eevee",
+    "subtitulo": "Blind Box",
+    "imagem": "assets/sleeping-eevee.png",
+    "preco": "R$70",
+    "pix": "R$65",
+    "parcelado": "3x de R$24 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-23",
+    "categoria": [
+      "pokemon",
+      "outros",
+      "blind"
+    ],
+    "titulo": "Pokepeace",
+    "subtitulo": "Blind Box",
+    "imagem": "assets/pokepeace.png",
+    "preco": "R$80",
+    "pix": "R$70",
+    "parcelado": "3x de R$27 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-24",
+    "categoria": [
+      "pokemon",
+      "destaque",
+      "chines"
+    ],
+    "titulo": "151 Blind",
+    "subtitulo": "Dream Painting vol.1",
+    "imagem": "assets/dream-vl1-151.png",
+    "preco": "R$280",
+    "pix": "R$250",
+    "parcelado": "3x de R$94 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-25",
+    "categoria": [
+      "pokemon",
+      "destaque",
+      "chines"
+    ],
+    "titulo": "Aqua Blind",
+    "subtitulo": "Dream Painting vol.2",
+    "imagem": "assets/dream-vl2-aqua.png",
+    "preco": "R$280",
+    "pix": "R$250",
+    "parcelado": "3x de R$94 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-26",
+    "categoria": [
+      "pokemon",
+      "chines"
+    ],
+    "titulo": "Eevee Blind",
+    "subtitulo": "Chaveiro Expositor",
+    "imagem": "assets/expo-eevee.png",
+    "preco": "R$280",
+    "pix": "R$250",
+    "parcelado": "3x de R$94 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-27",
+    "categoria": [
+      "pokemon",
+      "chines"
+    ],
+    "titulo": "Charizard Blind",
+    "subtitulo": "Chaveiro Expositor",
+    "imagem": "assets/expo-charizard.png",
+    "preco": "R$280",
+    "pix": "R$250",
+    "parcelado": "3x de R$94 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-28",
+    "categoria": [
+      "pokemon",
+      "chines"
+    ],
+    "titulo": "Unbreon",
+    "subtitulo": "Porta retrato",
+    "imagem": "assets/retrato-unbreon.png",
+    "preco": "R$250",
+    "pix": "R$220",
+    "parcelado": "3x de R$84 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
+    }
+  },
+  {
+    "id": "item-29",
+    "categoria": [
+      "pokemon",
+      "chines"
+    ],
+    "titulo": "Mew",
+    "subtitulo": "Porta retrato",
+    "imagem": "assets/retrato-mew.png",
+    "preco": "R$250",
+    "pix": "R$220",
+    "parcelado": "3x de R$84 sem juros",
+    "links": {
+      "tiktok": "",
+      "olx": "",
+      "mypcards": "",
+      "whats": ""
     }
   }
 ]
