@@ -83,4 +83,123 @@
       var subtitleEl = document.getElementById('modalSubtitle');
       var precoEl = document.getElementById('modalPreco');
       var pixEl = document.getElementById('modalPix');
-      var parceladoEl = document.getElementById('modalParcelado
+      var parceladoEl = document.getElementById('modalParcelado');
+      var tiktokEl = document.getElementById('modalTiktok');
+      var olxEl = document.getElementById('modalOlx');
+      var mypcardsEl = document.getElementById('modalMypcards');
+      var whatsEl = document.getElementById('modalWhats');
+      var closeBtn = document.getElementById('modalCloseBtn');
+
+      function setLinkOrHide(el, value){
+        if (value){
+          try {
+            var url = new URL(value);
+            url.searchParams.set('utm_source', 'site_nateil');
+            url.searchParams.set('utm_medium', 'hub_links');
+            el.href = url.toString();
+          } catch(e) {
+            el.href = value;
+          }
+          el.style.display = '';
+        } else {
+          el.style.display = 'none';
+        }
+      }
+
+      window.inicializarBotoesComprar = function(){
+        document.querySelectorAll('.pg-card').forEach(function(btn){
+          if (btn.dataset.bound) return;
+          btn.dataset.bound = "true";
+
+          btn.addEventListener('click', function(){
+            imgEl.src = btn.dataset.img;
+            imgEl.alt = btn.dataset.title;
+            titleEl.textContent = btn.dataset.title;
+            subtitleEl.textContent = btn.dataset.subtitle;
+            precoEl.textContent = btn.dataset.price;
+            pixEl.textContent = btn.dataset.pix || '';
+            parceladoEl.textContent = btn.dataset.installments || '';
+
+            setLinkOrHide(tiktokEl, btn.dataset.tiktok);
+            setLinkOrHide(olxEl, btn.dataset.olx);
+            setLinkOrHide(mypcardsEl, btn.dataset.mypcards);
+            setLinkOrHide(whatsEl, btn.dataset.whats);
+
+            overlay.classList.add('open');
+          });
+        });
+      };
+
+      function closeModal(){ overlay.classList.remove('open'); }
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) closeModal(); });
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeModal(); });
+    })();
+  </script>
+
+  <!-- SCRIPT DE BUSCA DOS PRODUTOS (JSON) -->
+  <script>
+    fetch('produtos.json')
+      .then(res => res.json())
+      .then(produtos => {
+        
+        produtos.forEach(function(produto){
+          var cardHTML = `
+            <div class="pg-card" 
+                 data-title="${produto.titulo}"
+                 data-subtitle="${produto.subtitulo}"
+                 data-price="${produto.preco}"
+                 data-pix="${produto.pix || ''}"
+                 data-installments="${produto.parcelado || ''}"
+                 data-img="${produto.imagem}"
+                 data-tiktok="${produto.links.tiktok || ''}"
+                 data-olx="${produto.links.olx || ''}"
+                 data-mypcards="${produto.links.mypcards || ''}"
+                 data-whats="${produto.links.whats || ''}">
+              
+              <div class="pg-card-img">
+                <img src="${produto.imagem}" alt="${produto.titulo}">
+              </div>
+              
+              <div class="pg-card-body">
+                <div class="pg-card-text">
+                  <h3>${produto.titulo}</h3>
+                  <p>${produto.preco}</p>
+                </div>
+                <button class="pg-buy">
+                  <span>Comprar</span>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          `;
+          
+          produto.categoria.forEach(function(cat) {
+            // Mapeamento correto com as seções da sua index
+            var mapeamentoSecoes = {
+              'destaque': 'produtos-destaque',
+              'cartas': 'cartas-destaque',
+              'outros': 'outros-produtos'
+            };
+
+            var alvoId = mapeamentoSecoes[cat];
+            if (alvoId) {
+              var alvo = document.getElementById(alvoId);
+              if (alvo) alvo.insertAdjacentHTML('beforeend', cardHTML);
+            }
+          });
+          
+        });
+
+        if (typeof window.inicializarBotoesComprar === 'function') {
+          window.inicializarBotoesComprar();
+        }
+      })
+      .catch(erro => console.error('Erro ao carregar o catálogo:', erro));
+  </script>
+
+</body>
+</html>
