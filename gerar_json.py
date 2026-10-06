@@ -7,11 +7,13 @@ produtos = []
 with open('produtos.csv', mode='r', encoding='utf-8-sig') as arquivo_csv:
     leitor = csv.DictReader(arquivo_csv)
     
-    for linha in leitor:
-        # Monta a estrutura exata que o site espera
+for linha in leitor:
+        # Transforma "pokemon, destaque" em uma lista real: ["pokemon", "destaque"]
+        categorias_lista = [cat.strip().lower() for cat in linha["categoria"].split(",")]
+        
         produto = {
             "id": linha["id"],
-            "categoria": linha["categoria"],
+            "categoria": categorias_lista, # <-- Agora recebe a lista
             "titulo": linha["titulo"],
             "subtitulo": linha["subtitulo"],
             "imagem": linha["imagem"],
