@@ -1,0 +1,30 @@
+id,categoria,titulo,subtitulo,imagem,preco,pix,parcelado,link_tiktok,link_olx,link_mypcards,link_whats,quantidade,preco_compra
+item-01,"pokemon, destaque, chines",Eevelutions Blind,Dream Painting vol.3,assets/dream-vl3-eevee.png,R$380,R$350,5x de R$76 sem juros,,,,,5,250
+item-02,"lorcana, destaque, deck",Starter Deck para 2,12 - Wilds Unknown,assets/lorcana-deck.png,R$350,R$300,3x de R$117 sem juros,,,,,2,180
+item-03,"pokemon, blister",Blister triplo,ME 05 - Escuridão Absoluta,assets/produto-blister-triplo-escuridao.png,R$40,R$33,3x de R$14 sem juros,,,,,4,25
+item-04,"pokemon, blister",Blister quadruplo,ME 05 - Escuridão Absoluta,assets/produto-blister-quadruplo-escuridao.png,R$48,R$43,3x de R$16 sem juros,,,,,4,33
+item-05,"lorcana, cartas",Winnie the Pooh & Piglet - Hunny Mages (234),13 - Attack of the Vine!,assets/poohandpiglet_13_0234.png,R$4.999,R$3.999,5x de R$1000 sem juros,,,,https://wa.me/+5561984129637?text=Quero%20comprar%20Pooh%20And%20Piglet,,
+item-06,"lorcana, cartas",Peter Pan - Created by the Vine (216),13 - Attack of the Vine!,assets/peterpan_13_0216.png,R9,R$7,3x de R$3 sem juros,,,,https://wa.me/+5561984129637?text=Quero%20comprar%20Peter%20Pan,,
+item-07,"pokemon, cartas",Mewtwo ex da Equipe Rocket (231/182) (SP),SV10 - Rivais Predestinados,assets/mewtwo_dri_231.png,R$1499,R$1350,3x de R$500 sem juros,,,,https://wa.me/+5561984129637?text=Quero%20comprar%20Mewtwo%20DRI,,
+item-08,"pokemon, outros, decks",Deck pré release - Tyrantrum,ME 03 - Equilíbrio Perfeito,assets/deck-tyrantrum.png,R$40,R$35,3x de R$14 sem juros,,,,,,
+item-09,"pokemon, outros, decks",Deck pré release - Serperior,ME 03 - Equilíbrio Perfeito,assets/deck-serperior.png,R$40,R$35,3x de R$14 sem juros,,,,,,
+item-10,"pokemon, outros, decks",Deck pré release - Flygon,ME 02 - Fogo fantasmagórico,assets/deck-flygon.png,R$40,R$35,3x de R$14 sem juros,,,,,,
+item-11,"pokemon, outros, decks",Deck pré release - Toxtricity,ME 02 - Fogo fantasmagórico,assets/deck-toxtricity.png,R$40,R$35,3x de R$14 sem juros,,,,,,
+item-12,"pokemon, box",Mega Luar - Gengar,Box colecionável,assets/mega-luar-gengar.png,R$100,R$90,3x de R$34 sem juros,,,,,1,83
+item-13,"pokemon, box",Mega Luar - Clefable,Box colecionável,assets/mega-luar-gengar.png,R$100,R$90,3x de R$34 sem juros,,,,,1,83
+item-14,"pokemon, box",Mega forças - Darkrai,Box colecionável,assets/mega-forcas-darkrai.png,R$120,R$100,3x de R$40 sem juros,,,,,1,87
+item-15,"pokemon, box",Mega forças - Zeraora,Box colecionável,assets/mega-forcas-zeraora.png,R$120,R$100,3x de R$40 sem juros,,,,,1,87
+item-16,"pokemon, box",Mega forças - Dragonite,Box colecionável,assets/mega-forcas-dragonite.png,R$120,R$100,3x de R$40 sem juros,,,,,1,87
+item-17,"pokemon, deck",Mega Diance,Baralho de batalha,assets/deck-mega-diance.png,R$110,R$95,3x de R$37 sem juros,,,,,1,92
+item-18,"pokemon, deck",Mega Lucario,Baralho de batalha,assets/deck-mega-lucario.png,R$100,R$90,3x de R$34 sem juros,,,,,3,87
+item-19,"pokemon, deck",Charizard Tera,Batalha de liga,assets/deck-charizar-tera.png,R$95,R$85,3x de R$32 sem juros,,,,,3,80
+item-20,"pokemon, deck",Steven,Batalha de rivais,assets/deck-steven.png,R$95,R$85,3x de R$32 sem juros,,,,,1,92
+item-21,"pokemon, blister",Blister triplo,ME 02 - Fogo fantasmagórico,assets/produto-blister-triplo-fogo.png,R$48,R$43,3x de R$16 sem juros,,,,,12,38
+item-22,"pokemon, outros, blind",Sleeping eevee,Blind Box,assets/sleeping-eevee.png,R$70,R$65,3x de R$24 sem juros,,,,,9,50
+item-23,"pokemon, outros, blind",Pokepeace,Blind Box,assets/pokepeace.png,R$80,R$70,3x de R$27 sem juros,,,,,6,62
+item-24,"pokemon, destaque, chines",151 Blind,Dream Painting vol.1,assets/dream-vl1-151.png,R$280,R$250,3x de R$94 sem juros,,,,,5,184
+item-25,"pokemon, destaque, chines",Aqua Blind,Dream Painting vol.2,assets/dream-vl2-aqua.png,R$280,R$250,3x de R$94 sem juros,,,,,5,184
+item-26,"pokemon, chines",Eevee Blind,Chaveiro Expositor,assets/expo-eevee.png,R$280,R$250,3x de R$94 sem juros,,,,,5,203
+item-27,"pokemon, chines",Charizard Blind,Chaveiro Expositor,assets/expo-charizard.png,R$280,R$250,3x de R$94 sem juros,,,,,5,203
+item-28,"pokemon, chines",Unbreon,Porta retrato,assets/retrato-unbreon.png,R$250,R$220,3x de R$84 sem juros,,,,,1,185
+item-29,"pokemon, chines",Mew,Porta retrato,assets/retrato-mew.png,R$250,R$220,3x de R$84 sem juros,,,,,6,185
