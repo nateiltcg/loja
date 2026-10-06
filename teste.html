@@ -1,64 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nateil TCG</title>
-<meta name="description" content="Confira os produtos disponíveis na Nateil TCG: blisters, boosters, caixas e muito mais.">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <header class="pg-header">
-    <div class="pg-logo-row">
-      <a href="index.html">
-        <img src="assets/nateil.svg" alt="Nateil TCG">
-      </a>
-    </div>
-
-    <nav class="pg-nav" aria-label="Navegação principal">
-      <a href="/pokemon">
-        Pokemon
-      </a>
-      <a href="/lorcana">
-        Lorcana
-      </a>
-      <a href="/acessorios">
-        Acessórios
-      </a>      
-      <a href="/personalizados">
-        Produtos personalizados
-      </a>
-      <a href="/brinquedos">
-        Blind Box/Brinquedos
-      </a>
-    </nav>
-  </header>
-
-  <main class="wrap pg-main">
-
-    <section class="pg-banner" id="bannerCarousel">
-      <div class="pg-slide active">
-        <a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer"><img src="assets/banner_whats.png" alt="Entre no nosso grupo do WhatsApp!"></a>
-      </div>
-      <div class="pg-banner-dots"></div>
-    </section>
-
-    <!-- PRODUTOS EM DESTAQUE -->
-    <section class="hs-section" id="produtos-destaque">
+<!-- PRODUTOS EM DESTAQUE -->
+    <section class="hs-section"> <!-- Removi o ID repetido daqui -->
       <div class="hs-head">
         <div class="hs-title"><span class="bar"></span><p>Produtos em destaque</p></div>
-        <!--a class="hs-link" href="#produtos-destaque"><span>Todos os produtos</span></a-->
       </div>
       <section class="pg-grid" id="produtos-destaque"></section>
     </section>
 
     <!-- CARTAS EM DESTAQUE -->
-    <section class="hs-section" id="cartas">
+    <section class="hs-section"> <!-- Removi o ID repetido daqui -->
       <div class="hs-head">
         <div class="hs-title"><span class="bar"></span><p>Cartas em destaque</p></div>
         <a class="hs-link" href="https://mypcards.com/nateil" target="_blank"><span>Todas as cartas</span></a>
@@ -67,10 +16,9 @@
     </section>
 
     <!-- OUTROS PRODUTOS -->
-    <section class="hs-section" id="outros-produtos">
+    <section class="hs-section"> <!-- Removi o ID repetido daqui -->
       <div class="hs-head">
         <div class="hs-title"><span class="bar"></span><p>Outros produtos</p></div>
-        <!--a class="hs-link" href="#outros-produtos"><span>Todos os produtos</span></a>-->
       </div>
       <section class="pg-grid" id="outros-produtos"></section>
     </section>
@@ -79,7 +27,6 @@
 
   <footer class="pg-footer" id="contato">
     <div class="wrap pg-footer-inner">
-
       <div class="pg-footer-brand">
         <p>Nateil TCG</p>
         <ul class="pg-footer-links">
@@ -87,7 +34,6 @@
           <li><a href="como-comprar.html">Como comprar</a></li>
         </ul>
       </div>
-
       <div class="pg-footer-right">
         <div class="pg-socials">
           <a href="https://chat.whatsapp.com/DxCdR6WEBDR1v2R4oWhvrO" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><img src="assets/whats.svg" alt=""></a>
@@ -102,7 +48,6 @@
           <span>Copag ©</span>
         </div>
       </div>
-
     </div>
   </footer>
 
@@ -129,77 +74,13 @@
     </div>
   </div>
 
-<script>
-    fetch('produtos.json')
-      .then(res => res.json())
-      .then(produtos => {
-        
-        produtos.forEach(function(produto){
-          
-          // Constrói o HTML do card apenas uma vez
-          var cardHTML = `
-            <div class="pg-card" 
-                 data-title="${produto.titulo}"
-                 data-subtitle="${produto.subtitulo}"
-                 data-price="${produto.preco}"
-                 data-pix="${produto.pix || ''}"
-                 data-installments="${produto.parcelado || ''}"
-                 data-img="${produto.imagem}"
-                 data-tiktok="${produto.links.tiktok || ''}"
-                 data-olx="${produto.links.olx || ''}"
-                 data-mypcards="${produto.links.mypcards || ''}"
-                 data-whats="${produto.links.whats || ''}">
-              
-              <div class="pg-card-img">
-                <img src="${produto.imagem}" alt="${produto.titulo}">
-              </div>
-              
-              <div class="pg-card-body">
-                <div class="pg-card-text">
-                  <h3>${produto.titulo}</h3>
-                  <p>${produto.preco}</p>
-                </div>
-                <button class="pg-buy">
-                  <span>Comprar</span>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </div>
-            </div>
-          `;
-          
-          // O produto agora é um array (ex: ["pokemon", "destaque"])
-          // Vamos colocar esse card em todas as seções que combinam com as categorias dele
-          produto.categoria.forEach(function(cat) {
-            
-            // Aqui mapeamos a categoria para o ID da section correspondente no seu HTML
-            var mapeamentoSecoes = {
-              'destaque': 'produtos-destaque', // Produtos na home
-              'pokemon': 'sec-pokemon',        // Produtos de pokemon
-              'lorcana': 'sec-lorcana',        // Produtos de lorcana
-              'customizados': 'sec-customizados', // Produtos customizados
-              'outros': 'outros-produtos'      // Outros produtos
-            };
-
-            var alvoId = mapeamentoSecoes[cat];
-            if (alvoId) {
-              var alvo = document.getElementById(alvoId);
-              // Se a seção existir na página atual, ele injeta o card lá
-              if (alvo) alvo.insertAdjacentHTML('beforeend', cardHTML);
-            }
-          });
-          
-        });
-
-        // Inicializa o clique do modal para todos os cards criados
-        if (typeof window.inicializarBotoesComprar === 'function') {
-          window.inicializarBotoesComprar();
-        }
-      })
-      .catch(erro => console.error('Erro ao carregar o catálogo:', erro));
-  </script>
-
-</body>
-</html>
+  <!-- SCRIPT DO MODAL E LINKS UTM -->
+  <script>
+    (function(){
+      var overlay = document.getElementById('productModal');
+      var imgEl = document.getElementById('modalImg');
+      var titleEl = document.getElementById('modalTitle');
+      var subtitleEl = document.getElementById('modalSubtitle');
+      var precoEl = document.getElementById('modalPreco');
+      var pixEl = document.getElementById('modalPix');
+      var parceladoEl = document.getElementById('modalParcelado
