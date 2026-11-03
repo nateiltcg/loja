@@ -619,4 +619,34 @@ button{ font-family:inherit; }
   .hs-head{ flex-wrap: wrap; }
   .hs-title p{ font-size: 1.1rem; }
 }
+/* =====================================================================
+   Estilos extras para os cards gerados pelo loja.js
+   (cole no FINAL do seu style.css)
+   ===================================================================== */
 
+.pg-card-text .pg-card-price{
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.pg-buy img{ width:20px; height:20px; }
+
+/* produto esgotado: sem clique, foto apagada */
+.pg-card.esgotado{ cursor: default; }
+.pg-card.esgotado .pg-card-img img{
+  opacity: .45;
+  filter: grayscale(1);
+}
+
+/* foto ainda não enviada para assets/ */
+.pg-card-img.sem-foto{ padding: 8px; }
+.pg-card-sem-foto{
+  font-size: .8rem;
+  color: var(--text-dim2);
+  text-align: center;
+}
+.pg-grid > .pg-card-sem-foto{ grid-column: 1 / -1; }
+
+/* trava a rolagem da página enquanto a modal está aberta */
+body.modal-aberto{ overflow: hidden; }
