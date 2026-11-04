@@ -650,3 +650,5 @@ button{ font-family:inherit; }
 
 /* trava a rolagem da página enquanto a modal está aberta */
 body.modal-aberto{ overflow: hidden; }
+
+.pg-vazio{ grid-column: 1 / -1; margin: 0; padding: 8px 0 16px; color: var(--text-dim2); font-size: .95rem; }
