@@ -9,8 +9,15 @@
         <section class="pg-grid" data-tags="esgotado"></section>
         <section class="pg-grid" data-tags=""></section>               (todos os produtos)
 
+      Várias tags separadas por espaço = o produto precisa ter TODAS.
+      Com | entre tags = basta ter UMA delas:
+
+        <section class="pg-grid" data-tags="pokemon deck|decks"></section>
+
       Opcionais:  data-limite="6"   mostra no máximo 6 produtos
                   data-incluir-esgotados   inclui os esgotados na grade
+                  data-vazio="Em breve por aqui."   se não houver produtos, mostra
+                  essa mensagem (sem isso, a seção inteira some)
 
    2. No final do <body>, uma única linha:
 
@@ -272,15 +279,20 @@
 
   // ---------- SEÇÕES ----------
   function filtrar(produtos, grade) {
-    var pedidas = (grade.getAttribute('data-tags') || '')
-      .toLowerCase().split(/[\s,]+/).filter(Boolean);
-    var querEsgotados = pedidas.indexOf('esgotado') !== -1 ||
-      grade.hasAttribute('data-incluir-esgotados');
+    // "pokemon deck|decks" -> [['pokemon'], ['deck', 'decks']]  (E entre grupos, OU dentro do grupo)
+    var grupos = (grade.getAttribute('data-tags') || '')
+      .toLowerCase().split(/[\s,]+/).filter(Boolean)
+      .map(function (token) { return token.split('|').filter(Boolean); });
+
+    var querEsgotados = grade.hasAttribute('data-incluir-esgotados') ||
+      grupos.some(function (g) { return g.indexOf('esgotado') !== -1; });
 
     var lista = produtos.filter(function (p) {
       var tags = tagsDe(p);
       if (!querEsgotados && tags.indexOf('esgotado') !== -1) return false;
-      return pedidas.every(function (t) { return tags.indexOf(t) !== -1; });
+      return grupos.every(function (g) {
+        return g.some(function (t) { return tags.indexOf(t) !== -1; });
+      });
     });
 
     var limite = parseInt(grade.getAttribute('data-limite'), 10);
@@ -293,8 +305,16 @@
       var itens = filtrar(produtos, grade);
       grade.textContent = '';
 
-      // seção vazia some inteira (título incluído)
       var secao = grade.closest('.hs-section');
+      var mensagem = grade.getAttribute('data-vazio');
+
+      if (!itens.length && mensagem) {          // sem produtos, mas com aviso "em breve"
+        if (secao) secao.style.display = '';
+        grade.appendChild(el('p', 'pg-vazio', mensagem));
+        return;
+      }
+
+      // seção vazia some inteira (título incluído)
       if (secao) secao.style.display = itens.length ? '' : 'none';
 
       itens.forEach(function (p) { grade.appendChild(criarCard(p)); });
