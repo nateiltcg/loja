@@ -41,13 +41,15 @@
   // pode alterar o texto da mensagem.
   var UTM = { utm_source: 'site_nateil', utm_medium: 'hub_links' };
 
-  // Canais de compra, na ordem em que aparecem na modal.
-  // "chave" é o nome dentro de "links" no produtos.json.
-  var CANAIS = [
-    { chave: 'tiktok',   rotulo: 'Comprar no TikTok Shop', classe: 'modal-buy' },
-    { chave: 'infinitypay', rotulo: 'Comprar com Pix ou cartão', classe: 'modal-buy' },
-    { chave: 'mypcards', rotulo: 'Comprar no MyPCards',    classe: 'modal-buy' },
-    { chave: 'whats',    rotulo: 'Comprar pelo WhatsApp',  classe: 'modal-buy-outline' }
+  // Botão principal da modal: pagamento na Loja Online (chave "infinitypay" no produtos.json)
+  var ROTULO_COMPRAR = 'Comprar agora';
+
+  // Outras plataformas, mostradas como ícones embaixo do botão principal.
+  // "chave" é o nome dentro de "links" no produtos.json; "icone" fica em /assets.
+  var PLATAFORMAS = [
+    { chave: 'tiktok',   rotulo: 'TikTok',   icone: '/assets/tiktok.svg' },
+    { chave: 'whats',    rotulo: 'WhatsApp', icone: '/assets/whats.svg' },
+    { chave: 'mypcards', rotulo: 'MyPCards', icone: '/assets/mypcards.svg' }
   ];
 
   // ---------- UTILIDADES ----------
@@ -159,15 +161,33 @@
     direita.appendChild(subtitulo);
     direita.appendChild(precos);
 
+    var comprar = el('a', 'modal-buy', ROTULO_COMPRAR);
+    comprar.target = '_blank';
+    comprar.rel = 'noopener noreferrer';
+    comprar.href = '#';
+    direita.appendChild(comprar);
+
+    var bloco = el('div', 'modal-plataformas');
+    var tituloPlat = el('p', 'modal-plataformas-titulo', 'Compre também pelas plataformas');
+    var lista = el('div', 'modal-plataformas-lista');
     var botoes = {};
-    CANAIS.forEach(function (c) {
-      var a = el('a', c.classe, c.rotulo);
+    PLATAFORMAS.forEach(function (c) {
+      var a = el('a', 'modal-plat');
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
       a.href = '#';
+      a.setAttribute('aria-label', 'Comprar pelo ' + c.rotulo);
+      var ic = el('img');
+      ic.src = c.icone;
+      ic.alt = '';
+      a.appendChild(ic);
+      a.appendChild(el('span', '', c.rotulo));
       botoes[c.chave] = a;
-      direita.appendChild(a);
+      lista.appendChild(a);
     });
+    bloco.appendChild(tituloPlat);
+    bloco.appendChild(lista);
+    direita.appendChild(bloco);
 
     caixa.appendChild(fechar);
     caixa.appendChild(esquerda);
@@ -179,6 +199,7 @@
       overlay: overlay, caixa: caixa, fechar: fechar, img: img,
       titulo: titulo, subtitulo: subtitulo,
       preco: preco, pix: pix, parcelado: parcelado,
+      comprar: comprar, bloco: bloco, tituloPlat: tituloPlat,
       botoes: botoes, ultimoFoco: null
     };
 
@@ -219,15 +240,30 @@
     modal.pix.textContent = produto.pix ? produto.pix + ' no Pix' : '';
     modal.parcelado.textContent = produto.parcelado || '';
 
-    CANAIS.forEach(function (c) {
+    // botão principal: só aparece se o produto tem link da Loja Online
+    if (links.infinitypay) {
+      modal.comprar.href = links.infinitypay;
+      modal.comprar.style.display = '';
+    } else {
+      modal.comprar.style.display = 'none';
+    }
+
+    // ícones das outras plataformas (somem os que não têm link)
+    var algum = false;
+    PLATAFORMAS.forEach(function (c) {
       var a = modal.botoes[c.chave];
       if (links[c.chave]) {
         a.href = links[c.chave];
         a.style.display = '';
+        algum = true;
       } else {
         a.style.display = 'none';
       }
     });
+    modal.bloco.style.display = algum ? '' : 'none';
+    modal.tituloPlat.textContent = links.infinitypay
+      ? 'Compre também pelas plataformas'
+      : 'Compre pelas plataformas';
 
     modal.ultimoFoco = origem || null;
     modal.overlay.classList.add('open');
