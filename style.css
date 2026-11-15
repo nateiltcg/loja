@@ -58,7 +58,7 @@ button{ font-family:inherit; }
 .pg-nav a svg{ width:22px; height:22px; flex-shrink:0; }
 .pg-nav a.active{ color: var(--gold); }
 
-.pg-main{ padding: 24px 0 64px; }
+.pg-main{ padding: 24px 16px 64px; }   /* era: 24px 0 64px */
 
 /* ---------- banner / carrossel ---------- */
 .pg-banner{
@@ -195,8 +195,8 @@ button{ font-family:inherit; }
 }
  
 .modal{
-  background: #3C0702;
-  border: 1px solid #868383;
+  background: #04314F;
+  border: 1px solid #0E4568;
   border-radius: 20px;
   max-width: 832px;
   width: 100%;
@@ -619,6 +619,45 @@ button{ font-family:inherit; }
   .hs-head{ flex-wrap: wrap; }
   .hs-title p{ font-size: 1.1rem; }
 }
+/* =====================================================================
+   Estilos extras para os cards gerados pelo loja.js
+   (cole no FINAL do seu style.css)
+   ===================================================================== */
+
+.pg-card-text .pg-card-price{
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.pg-buy img{ width:20px; height:20px; }
+
+/* produto esgotado: sem clique, foto apagada */
+.pg-card.esgotado{ cursor: default; }
+.pg-card.esgotado .pg-card-img img{
+  opacity: .45;
+  filter: grayscale(1);
+}
+
+/* foto ainda não enviada para assets/ */
+.pg-card-img.sem-foto{ padding: 8px; }
+.pg-card-sem-foto{
+  font-size: .8rem;
+  color: var(--text-dim2);
+  text-align: center;
+}
+.pg-grid > .pg-card-sem-foto{ grid-column: 1 / -1; }
+
+/* trava a rolagem da página enquanto a modal está aberta */
+body.modal-aberto{ overflow: hidden; }
+
+.pg-vazio{ grid-column: 1 / -1; margin: 0; padding: 8px 0 16px; color: var(--text-dim2); font-size: .95rem; }
+
+@media (max-width: 560px){
+  .pg-nav{ gap: 0 22px; padding: 8px 16px; }
+  .pg-nav a{ padding: 8px 0; }
+}
+
 /* ---------- modal: outras plataformas (ícones) ---------- */
 .modal-plataformas{
   display: flex;
