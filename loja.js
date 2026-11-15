@@ -45,7 +45,7 @@
   // "chave" é o nome dentro de "links" no produtos.json.
   var CANAIS = [
     { chave: 'tiktok',   rotulo: 'Comprar no TikTok Shop', classe: 'modal-buy' },
-    { chave: 'olx',      rotulo: 'Comprar na OLX',         classe: 'modal-buy' },
+    { chave: 'infinitypay', rotulo: 'Comprar com Pix ou cartão', classe: 'modal-buy' },
     { chave: 'mypcards', rotulo: 'Comprar no MyPCards',    classe: 'modal-buy' },
     { chave: 'whats',    rotulo: 'Comprar pelo WhatsApp',  classe: 'modal-buy-outline' }
   ];
@@ -89,7 +89,7 @@
     if (!url) return '';
     try {
       var u = new URL(url);
-      if (u.hostname === 'wa.me') return url;
+      if (u.hostname === 'wa.me' || u.hostname === 'loja.infinitepay.io') return url;
       Object.keys(UTM).forEach(function (k) { u.searchParams.set(k, UTM[k]); });
       return u.toString();
     } catch (e) {
@@ -97,12 +97,23 @@
     }
   }
 
+  // Link de pagamento: só aceita a sua Loja Online da InfinitePay (qualquer outro endereço é ignorado)
+  function linkInfinitePay(url) {
+    var seguro = linkSeguro(url);
+    if (!seguro) return '';
+    try {
+      var u = new URL(seguro);
+      return (u.protocol === 'https:' && u.hostname === 'loja.infinitepay.io' &&
+              u.pathname.indexOf('/nateil_tcg/') === 0) ? seguro : '';
+    } catch (e) { return ''; }
+  }
+
   // Links finais do produto (planilha primeiro, WhatsApp padrão como reserva)
   function linksDe(produto) {
     var l = produto.links || {};
     return {
       tiktok: comUtm(linkSeguro(l.tiktok)),
-      olx: comUtm(linkSeguro(l.olx)),
+      infinitypay: linkInfinitePay(l.infinitypay),
       mypcards: comUtm(linkSeguro(l.mypcards)),
       whats: linkSeguro(l.whats) || linkWhatsPadrao(produto)
     };
